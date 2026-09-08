@@ -2447,3 +2447,1048 @@ footer {
 ------------------------------------------------------------ */
 
 
+
+
+/* ============================================================
+   CYBERWARESURGEON HOME PORTAL V0.5
+   ============================================================ */
+
+
+.home-portal-v2 {
+    overflow: hidden;
+}
+
+
+
+/* ============================================================
+   PRIMARY ENTRY
+   ============================================================ */
+
+
+.home-portal-v2 .home-entry {
+
+    max-width: var(--max-width);
+
+    margin: 0 auto;
+
+    padding:
+        clamp(90px, 9vw, 150px)
+        32px
+        clamp(90px, 9vw, 140px);
+
+}
+
+
+.home-portal-v2 .home-entry-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.25fr)
+        minmax(340px, 0.75fr);
+
+    gap:
+        clamp(
+            60px,
+            9vw,
+            150px
+        );
+
+    align-items: center;
+
+}
+
+
+
+/* KICKER */
+
+
+.home-portal-v2 .home-kicker {
+
+    margin-bottom: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: var(--muted);
+
+    font-size: 0.63rem;
+
+    letter-spacing: 0.15em;
+
+}
+
+
+.home-portal-v2 .home-kicker-light {
+
+    width: 7px;
+    height: 7px;
+
+    flex: 0 0 auto;
+
+    background: var(--acid);
+
+    box-shadow:
+        0 0 13px
+        rgba(200, 255, 47, 0.75);
+
+}
+
+
+
+/* MAIN TITLE */
+
+
+.home-portal-v2 .home-main-title {
+
+    max-width: 1000px;
+
+    margin:
+        0
+        0
+        35px;
+
+    font-size:
+        clamp(
+            4rem,
+            8vw,
+            9rem
+        );
+
+    line-height: 0.82;
+
+    letter-spacing: -0.07em;
+
+}
+
+
+.home-portal-v2 .home-main-title span {
+
+    display: block;
+
+    color: var(--acid);
+
+    -webkit-text-stroke: 0;
+
+}
+
+
+.home-portal-v2 .home-main-intro {
+
+    max-width: 660px;
+
+    color: var(--muted);
+
+    font-size:
+        clamp(
+            1rem,
+            1.3vw,
+            1.18rem
+        );
+
+    line-height: 1.75;
+
+}
+
+
+
+/* SELECT DESTINATION */
+
+
+.home-portal-v2 .home-select-message {
+
+    max-width: 660px;
+
+    margin-top: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    color: var(--muted);
+
+    font-size: 0.63rem;
+
+    letter-spacing: 0.16em;
+
+}
+
+
+.home-portal-v2 .home-select-line {
+
+    height: 1px;
+
+    flex: 1;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(200,255,47,0.8),
+            transparent
+        );
+
+}
+
+
+
+/* ============================================================
+   CORE GRAPHIC
+   ============================================================ */
+
+
+.home-portal-v2 .home-core {
+
+    padding:
+        32px;
+
+    border:
+        1px solid
+        rgba(200,255,47,0.18);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(200,255,47,0.045),
+            transparent 55%
+        ),
+        var(--panel);
+
+}
+
+
+.home-portal-v2 .home-core-outer {
+
+    width:
+        min(
+            360px,
+            90%
+        );
+
+    aspect-ratio: 1;
+
+    margin:
+        25px
+        auto
+        50px;
+
+    position: relative;
+
+    display: grid;
+
+    place-items: center;
+
+}
+
+
+.home-portal-v2 .home-core-ring {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(200,255,47,0.28);
+
+}
+
+
+.home-portal-v2 .ring-alpha {
+
+    width: 100%;
+    height: 100%;
+
+    border-style: dashed;
+
+    animation:
+        cws-home-spin
+        30s
+        linear
+        infinite;
+
+}
+
+
+.home-portal-v2 .ring-beta {
+
+    width: 72%;
+    height: 72%;
+
+}
+
+
+.home-portal-v2 .ring-gamma {
+
+    width: 46%;
+    height: 46%;
+
+    border-color:
+        rgba(200,255,47,0.55);
+
+}
+
+
+.home-portal-v2 .home-core-cross {
+
+    position: absolute;
+
+    background:
+        rgba(200,255,47,0.12);
+
+}
+
+
+.home-portal-v2 .home-core-cross.horizontal {
+
+    width: 100%;
+    height: 1px;
+
+}
+
+
+.home-portal-v2 .home-core-cross.vertical {
+
+    width: 1px;
+    height: 100%;
+
+}
+
+
+.home-portal-v2 .home-core-centre {
+
+    width: 28%;
+    aspect-ratio: 1;
+
+    position: relative;
+
+    z-index: 3;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transform: rotate(45deg);
+
+    border:
+        1px solid var(--acid);
+
+    background:
+        rgba(200,255,47,0.07);
+
+}
+
+
+.home-portal-v2 .home-core-centre span,
+.home-portal-v2 .home-core-centre strong {
+
+    transform: rotate(-45deg);
+
+}
+
+
+.home-portal-v2 .home-core-centre span {
+
+    color: var(--acid);
+
+    font-size: 1.1rem;
+
+    font-weight: 900;
+
+}
+
+
+.home-portal-v2 .home-core-centre strong {
+
+    margin-top: 7px;
+
+    color: var(--muted);
+
+    font-size: 0.52rem;
+
+    letter-spacing: 0.12em;
+
+}
+
+
+.home-portal-v2 .home-core-scan {
+
+    position: absolute;
+
+    width: 100%;
+    height: 1px;
+
+    z-index: 4;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--acid),
+            transparent
+        );
+
+    animation:
+        cws-home-scan
+        4s
+        ease-in-out
+        infinite;
+
+}
+
+
+.home-portal-v2 .home-core-readout {
+
+    border-top:
+        1px solid var(--line);
+
+}
+
+
+.home-portal-v2 .home-core-readout > div {
+
+    padding:
+        12px
+        0;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    border-bottom:
+        1px solid var(--line);
+
+    font-size: 0.65rem;
+
+    letter-spacing: 0.1em;
+
+}
+
+
+.home-portal-v2 .home-core-readout span {
+
+    color: var(--muted);
+
+}
+
+
+.home-portal-v2 .home-core-readout strong {
+
+    color: var(--acid);
+
+}
+
+
+
+/* ============================================================
+   THREE DESTINATIONS
+   ============================================================ */
+
+
+.home-portal-v2 .home-destinations {
+
+    max-width: var(--max-width);
+
+    margin: 0 auto;
+
+    padding:
+        0
+        32px
+        130px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+}
+
+
+.home-portal-v2 .home-destination {
+
+    min-height: 400px;
+
+    padding:
+        28px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    position: relative;
+
+    border-top:
+        1px solid var(--line);
+
+    border-right:
+        1px solid var(--line);
+
+    border-bottom:
+        1px solid var(--line);
+
+    background:
+        rgba(255,255,255,0.005);
+
+    transition:
+        background 150ms ease,
+        border-color 150ms ease;
+
+}
+
+
+.home-portal-v2 .home-destination:first-child {
+
+    border-left:
+        1px solid var(--line);
+
+}
+
+
+.home-portal-v2 .home-destination:hover {
+
+    background:
+        rgba(200,255,47,0.035);
+
+    border-color:
+        rgba(200,255,47,0.32);
+
+}
+
+
+.home-portal-v2 .home-destination-primary::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 2px;
+
+    background: var(--acid);
+
+}
+
+
+.home-portal-v2 .home-destination-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    font-size: 0.64rem;
+
+    letter-spacing: 0.12em;
+
+}
+
+
+.home-portal-v2 .home-destination-number {
+
+    color: var(--acid);
+
+}
+
+
+.home-portal-v2 .home-destination-code {
+
+    color: var(--muted);
+
+}
+
+
+.home-portal-v2 .home-destination-main p {
+
+    margin-bottom: 10px;
+
+    color: var(--muted);
+
+    font-size: 0.65rem;
+
+    letter-spacing: 0.15em;
+
+}
+
+
+.home-portal-v2 .home-destination-main h2 {
+
+    margin: 0;
+
+    font-size:
+        clamp(
+            2.5rem,
+            4.5vw,
+            5rem
+        );
+
+    line-height: 0.88;
+
+}
+
+
+.home-portal-v2 .home-destination-main h2 span {
+
+    display: block;
+
+    color: var(--acid);
+
+}
+
+
+.home-portal-v2 .home-destination-bottom {
+
+    padding-top: 18px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    border-top:
+        1px solid var(--line);
+
+    color: var(--muted);
+
+    font-size: 0.61rem;
+
+    letter-spacing: 0.11em;
+
+}
+
+
+.home-portal-v2 .home-destination-bottom strong {
+
+    color: var(--acid);
+
+    font-size: 1.3rem;
+
+}
+
+
+
+/* ============================================================
+   CURRENT OPERATION
+   ============================================================ */
+
+
+.home-portal-v2 .home-current-operation {
+
+    max-width: var(--max-width);
+
+    margin: 0 auto;
+
+    padding:
+        110px
+        32px;
+
+    border-top:
+        1px solid var(--line);
+
+}
+
+
+.home-portal-v2 .home-current-header {
+
+    margin-bottom: 45px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: end;
+
+    gap: 40px;
+
+}
+
+
+.home-portal-v2 .home-current-header h2 {
+
+    margin: 0;
+
+}
+
+
+.home-portal-v2 .home-current-header h2 span {
+
+    display: block;
+
+    color: var(--acid);
+
+}
+
+
+.home-portal-v2 .home-operation-status {
+
+    padding-bottom: 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    color: var(--acid);
+
+    font-size: 0.64rem;
+
+    letter-spacing: 0.12em;
+
+}
+
+
+
+/* CARD */
+
+
+.home-portal-v2 .home-operation-card {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.4fr)
+        minmax(300px, 0.6fr);
+
+    overflow: hidden;
+
+    border:
+        1px solid var(--line);
+
+    background: var(--black-soft);
+
+}
+
+
+.home-portal-v2 .home-operation-image {
+
+    min-width: 0;
+
+    background: #000;
+
+}
+
+
+.home-portal-v2 .home-operation-image img {
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+}
+
+
+.home-portal-v2 .home-operation-information {
+
+    padding:
+        clamp(
+            35px,
+            5vw,
+            70px
+        );
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+}
+
+
+.home-portal-v2 .home-operation-project {
+
+    margin-bottom: 30px;
+
+    color: var(--acid);
+
+    font-size: 0.65rem;
+
+    letter-spacing: 0.14em;
+
+}
+
+
+.home-portal-v2 .home-operation-information h3 {
+
+    margin-bottom: 25px;
+
+    font-size:
+        clamp(
+            2rem,
+            3.5vw,
+            4.2rem
+        );
+
+    line-height: 0.95;
+
+    letter-spacing: -0.045em;
+
+}
+
+
+.home-portal-v2 .home-operation-information p {
+
+    color: var(--muted);
+
+    line-height: 1.7;
+
+}
+
+
+.home-portal-v2 .home-operation-open {
+
+    margin-top: 35px;
+
+    padding-top: 18px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    border-top:
+        1px solid var(--line);
+
+    color: var(--acid);
+
+    font-size: 0.67rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.12em;
+
+}
+
+
+
+/* ============================================================
+   SIGNAL BAR
+   ============================================================ */
+
+
+.home-portal-v2 .home-signal-bar {
+
+    max-width: var(--max-width);
+
+    margin: 0 auto;
+
+    padding:
+        30px
+        32px
+        45px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    border-top:
+        1px solid var(--line);
+
+    color: var(--muted);
+
+    font-size: 0.62rem;
+
+    letter-spacing: 0.13em;
+
+}
+
+
+.home-portal-v2 .home-signal-bar strong {
+
+    color: var(--acid);
+
+}
+
+
+
+/* ============================================================
+   MOTION
+   ============================================================ */
+
+
+@keyframes cws-home-spin {
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+@keyframes cws-home-scan {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(-135px);
+
+        opacity: 0;
+
+    }
+
+    50% {
+
+        transform:
+            translateY(135px);
+
+        opacity: 1;
+
+    }
+
+}
+
+
+
+/* ============================================================
+   TABLET
+   ============================================================ */
+
+
+@media (max-width: 1000px) {
+
+    .home-portal-v2 .home-entry-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .home-portal-v2 .home-core {
+
+        max-width: 650px;
+
+    }
+
+
+    .home-portal-v2 .home-destinations {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .home-portal-v2 .home-destination {
+
+        min-height: 280px;
+
+        border-left:
+            1px solid var(--line);
+
+    }
+
+
+    .home-portal-v2 .home-operation-card {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+
+@media (max-width: 640px) {
+
+    .home-portal-v2 .home-entry,
+    .home-portal-v2 .home-destinations,
+    .home-portal-v2 .home-current-operation,
+    .home-portal-v2 .home-signal-bar {
+
+        padding-left: 20px;
+        padding-right: 20px;
+
+    }
+
+
+    .home-portal-v2 .home-main-title {
+
+        font-size:
+            clamp(
+                3.4rem,
+                18vw,
+                5rem
+            );
+
+    }
+
+
+    .home-portal-v2 .home-core {
+
+        padding: 20px;
+
+    }
+
+
+    .home-portal-v2 .home-current-header {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+
+    .home-portal-v2 .home-operation-information {
+
+        padding:
+            35px
+            20px;
+
+    }
+
+
+    .home-portal-v2 .home-signal-bar {
+
+        flex-direction: column;
+
+    }
+
+}
+
+
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    .home-portal-v2 .ring-alpha,
+    .home-portal-v2 .home-core-scan {
+
+        animation: none;
+
+    }
+
+}
+
