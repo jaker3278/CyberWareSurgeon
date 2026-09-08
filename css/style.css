@@ -3515,3 +3515,479 @@ footer {
 }
 
 
+
+
+/* ============================================================
+   CYBERWARESURGEON PROJECT GALLERY V0.6
+   ============================================================ */
+
+
+.project-gallery {
+
+    margin:
+        0
+        0
+        80px;
+
+    border-top:
+        1px solid var(--line);
+
+    border-bottom:
+        1px solid var(--line);
+
+}
+
+
+/* ------------------------------------------------------------
+   TOOLBAR
+------------------------------------------------------------ */
+
+
+.project-gallery-toolbar {
+
+    min-height: 76px;
+
+    padding:
+        14px
+        0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+}
+
+
+.project-gallery-label {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+    font-size: 0.64rem;
+
+    letter-spacing: 0.13em;
+
+}
+
+
+.project-gallery-label span {
+
+    color: var(--muted);
+
+}
+
+
+.project-gallery-label strong {
+
+    color: var(--acid);
+
+}
+
+
+.project-gallery-controls {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+
+.project-gallery-arrow {
+
+    width: 48px;
+    height: 48px;
+
+    display: grid;
+
+    place-items: center;
+
+    padding: 0;
+
+    border:
+        1px solid var(--line);
+
+    background:
+        transparent;
+
+    color:
+        var(--text);
+
+    font: inherit;
+
+    font-size: 1.2rem;
+
+    cursor: pointer;
+
+    transition:
+        color 150ms ease,
+        border-color 150ms ease,
+        background 150ms ease;
+
+}
+
+
+.project-gallery-arrow:hover:not(:disabled) {
+
+    border-color: var(--acid);
+
+    background:
+        rgba(200,255,47,0.05);
+
+    color: var(--acid);
+
+}
+
+
+.project-gallery-arrow:focus-visible {
+
+    outline:
+        2px solid var(--acid);
+
+    outline-offset: 3px;
+
+}
+
+
+.project-gallery-arrow:disabled {
+
+    opacity: 0.22;
+
+    cursor: default;
+
+}
+
+
+.project-gallery-counter {
+
+    min-width: 74px;
+
+    text-align: center;
+
+    color: var(--muted);
+
+    font-size: 0.66rem;
+
+    letter-spacing: 0.12em;
+
+}
+
+
+.project-gallery-counter span:first-child {
+
+    color: var(--acid);
+
+}
+
+
+
+/* ------------------------------------------------------------
+   WINDOW + TRACK
+------------------------------------------------------------ */
+
+
+.project-gallery-window {
+
+    overflow: hidden;
+
+    border-top:
+        1px solid var(--line);
+
+}
+
+
+.project-gallery-track {
+
+    display: flex;
+
+    gap: 12px;
+
+    transform:
+        translateX(0);
+
+    transition:
+        transform 380ms
+        cubic-bezier(
+            0.22,
+            1,
+            0.36,
+            1
+        );
+
+}
+
+
+
+/* ------------------------------------------------------------
+   FOUR IMAGES VISIBLE
+------------------------------------------------------------ */
+
+
+.project-gallery-slide {
+
+    flex:
+        0
+        0
+        calc(
+            (100% - 36px) / 4
+        );
+
+    min-width: 0;
+
+    margin: 0;
+
+    position: relative;
+
+    overflow: hidden;
+
+    aspect-ratio: 4 / 5;
+
+    border-right:
+        1px solid var(--line);
+
+    background:
+        var(--panel);
+
+}
+
+
+.project-gallery-slide img {
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 2;
+
+    object-fit: cover;
+
+    transition:
+        transform 300ms ease;
+
+}
+
+
+.project-gallery-slide:hover img {
+
+    transform:
+        scale(1.025);
+
+}
+
+
+
+/* ------------------------------------------------------------
+   MISSING IMAGE PLACEHOLDER
+------------------------------------------------------------ */
+
+
+.gallery-image-placeholder {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    background:
+
+        linear-gradient(
+            rgba(200,255,47,0.025),
+            rgba(200,255,47,0.005)
+        ),
+
+        repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 16px,
+            rgba(255,255,255,0.015) 16px,
+            rgba(255,255,255,0.015) 17px
+        );
+
+    color: var(--muted);
+
+    font-size: 0.63rem;
+
+    letter-spacing: 0.16em;
+
+}
+
+
+.gallery-image-placeholder::before {
+
+    content: "";
+
+    width: 78px;
+    height: 78px;
+
+    border:
+        1px solid
+        rgba(200,255,47,0.22);
+
+    transform:
+        rotate(45deg);
+
+}
+
+
+.gallery-image-placeholder span {
+
+    color: var(--acid);
+
+}
+
+
+
+/* ------------------------------------------------------------
+   IMAGE CAPTION
+------------------------------------------------------------ */
+
+
+.project-gallery-slide figcaption {
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    z-index: 4;
+
+    padding:
+        22px
+        16px
+        14px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(0,0,0,0.92)
+        );
+
+    color: var(--muted);
+
+    font-size: 0.58rem;
+
+    letter-spacing: 0.11em;
+
+}
+
+
+.project-gallery-slide figcaption span {
+
+    color: var(--acid);
+
+}
+
+
+
+/* ------------------------------------------------------------
+   TABLET — TWO IMAGES
+------------------------------------------------------------ */
+
+
+@media (max-width: 900px) {
+
+    .project-gallery-slide {
+
+        flex-basis:
+            calc(
+                (100% - 12px) / 2
+            );
+
+    }
+
+}
+
+
+
+/* ------------------------------------------------------------
+   MOBILE — ONE IMAGE
+------------------------------------------------------------ */
+
+
+@media (max-width: 560px) {
+
+    .project-gallery-toolbar {
+
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+
+    }
+
+
+    .project-gallery-controls {
+
+        width: 100%;
+
+        justify-content:
+            space-between;
+
+    }
+
+
+    .project-gallery-slide {
+
+        flex-basis: 100%;
+
+    }
+
+}
+
+
+
+/* ------------------------------------------------------------
+   REDUCED MOTION
+------------------------------------------------------------ */
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    .project-gallery-track {
+
+        transition: none;
+
+    }
+
+
+    .project-gallery-slide img {
+
+        transition: none;
+
+    }
+
+}
+
