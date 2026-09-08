@@ -1317,3 +1317,198 @@ footer {
 
 }
 
+
+
+/* ============================================================
+   CYBERWARESURGEON MULTI PAGE V0.2
+   ============================================================ */
+
+
+.page-hero {
+    max-width: var(--max-width);
+
+    margin: 0 auto;
+
+    padding:
+        clamp(100px, 12vw, 190px)
+        32px
+        120px;
+}
+
+
+.page-lead {
+    max-width: 760px;
+
+    color: var(--muted);
+
+    font-size:
+        clamp(
+            1.05rem,
+            1.5vw,
+            1.3rem
+        );
+
+    line-height: 1.75;
+}
+
+
+.page-cta {
+    max-width: var(--max-width);
+
+    min-height: 550px;
+
+    margin: 0 auto;
+
+    padding:
+        120px
+        32px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    border-top:
+        1px solid var(--line);
+}
+
+
+.page-cta h2 span {
+    display: block;
+
+    color: var(--acid);
+}
+
+
+
+/* COMMISSION PAGE */
+
+
+.commission-layout {
+    max-width: var(--max-width);
+
+    margin: 0 auto;
+
+    padding:
+        120px
+        32px;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(360px, 0.8fr);
+
+    gap:
+        clamp(
+            60px,
+            10vw,
+            150px
+        );
+
+    border-top:
+        1px solid var(--line);
+}
+
+
+.commission-brief p:not(.eyebrow) {
+    max-width: 650px;
+
+    color: var(--muted);
+
+    line-height: 1.75;
+}
+
+
+.commission-brief .button {
+    margin-top: 30px;
+}
+
+
+.commission-diagnostic {
+    align-self: start;
+
+    border:
+        1px solid rgba(
+            200,
+            255,
+            47,
+            0.22
+        );
+
+    background: var(--panel);
+}
+
+
+.commission-checklist {
+    padding: 25px;
+}
+
+
+.commission-checklist > div {
+    padding:
+        22px
+        0;
+
+    border-bottom:
+        1px solid var(--line);
+}
+
+
+.commission-checklist > div:last-child {
+    border-bottom: 0;
+}
+
+
+.commission-checklist span {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: var(--acid);
+
+    font-size: 0.68rem;
+}
+
+
+.commission-checklist strong {
+    display: block;
+
+    margin-bottom: 8px;
+
+    letter-spacing: 0.08em;
+}
+
+
+.commission-checklist p {
+    margin-bottom: 0;
+
+    color: var(--muted);
+
+    line-height: 1.6;
+}
+
+
+@media (max-width: 900px) {
+
+    .commission-layout {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 640px) {
+
+    .page-hero,
+    .page-cta,
+    .commission-layout {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+}
+
