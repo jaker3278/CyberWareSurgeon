@@ -338,3 +338,141 @@ document
         updateGallery();
 
     });
+
+
+/* ============================================================
+   PROJECT INDEX SCROLLSPY V1
+   ============================================================ */
+
+(() => {
+
+    const links =
+        Array.from(
+            document.querySelectorAll(
+                "[data-project-jump]"
+            )
+        );
+
+
+    if (links.length === 0) {
+        return;
+    }
+
+
+    const projectEntries =
+        links
+            .map((link) => {
+
+                return document.getElementById(
+                    link.dataset.projectJump
+                );
+
+            })
+            .filter(Boolean);
+
+
+    const setActiveProject = (id) => {
+
+        links.forEach((link) => {
+
+            const active =
+                link.dataset.projectJump === id;
+
+            link.classList.toggle(
+                "is-active",
+                active
+            );
+
+
+            if (active) {
+
+                link.setAttribute(
+                    "aria-current",
+                    "true"
+                );
+
+            }
+            else {
+
+                link.removeAttribute(
+                    "aria-current"
+                );
+
+            }
+
+        });
+
+    };
+
+
+    const observer =
+        new IntersectionObserver(
+
+            (entries) => {
+
+                const visible =
+                    entries
+                        .filter(
+                            (entry) =>
+                                entry.isIntersecting
+                        )
+                        .sort(
+                            (a, b) =>
+                                b.intersectionRatio -
+                                a.intersectionRatio
+                        );
+
+
+                if (visible.length > 0) {
+
+                    setActiveProject(
+                        visible[0].target.id
+                    );
+
+                }
+
+            },
+
+            {
+                root: null,
+
+                rootMargin:
+                    "-20% 0px -55% 0px",
+
+                threshold:
+                    [
+                        0,
+                        0.1,
+                        0.25,
+                        0.5
+                    ]
+            }
+
+        );
+
+
+    projectEntries.forEach(
+        (project) => {
+
+            observer.observe(
+                project
+            );
+
+        }
+    );
+
+
+    /*
+       Start with the first project highlighted.
+    */
+
+    if (projectEntries[0]) {
+
+        setActiveProject(
+            projectEntries[0].id
+        );
+
+    }
+
+})();
+

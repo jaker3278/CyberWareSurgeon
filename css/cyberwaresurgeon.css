@@ -4607,3 +4607,368 @@ footer {
 
 }
 
+
+
+/* ============================================================
+   PROJECT INDEX SIDE PANEL V1
+   ============================================================ */
+
+.projects-page .project-entry {
+    scroll-margin-top: 110px;
+}
+
+
+.project-jump-panel {
+    position: fixed;
+
+    left: 18px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 190px;
+
+    z-index: 80;
+
+    background:
+        rgba(
+            5,
+            7,
+            6,
+            0.94
+        );
+
+    border:
+        1px solid
+        rgba(
+            237,
+            243,
+            239,
+            0.14
+        );
+
+    border-left:
+        2px solid
+        var(--acid);
+
+    box-shadow:
+        0 20px 60px
+        rgba(
+            0,
+            0,
+            0,
+            0.38
+        );
+
+    backdrop-filter: blur(12px);
+}
+
+
+.project-jump-header {
+    padding:
+        16px
+        14px
+        14px;
+
+    border-bottom:
+        1px solid
+        rgba(
+            237,
+            243,
+            239,
+            0.12
+        );
+}
+
+
+.project-jump-header span {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: var(--acid);
+
+    font-size: 0.52rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.16em;
+}
+
+
+.project-jump-header strong {
+    color: var(--text);
+
+    font-size: 0.65rem;
+
+    letter-spacing: 0.13em;
+}
+
+
+.project-jump-link {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        31px
+        minmax(0, 1fr);
+
+    gap: 7px;
+
+    padding:
+        14px
+        12px;
+
+    color: var(--muted);
+
+    text-decoration: none;
+
+    border-bottom:
+        1px solid
+        rgba(
+            237,
+            243,
+            239,
+            0.08
+        );
+
+    transition:
+        color 140ms ease,
+        background 140ms ease,
+        padding-left 140ms ease;
+}
+
+
+.project-jump-link:hover {
+    color: var(--text);
+
+    background:
+        rgba(
+            237,
+            243,
+            239,
+            0.035
+        );
+
+    padding-left: 16px;
+}
+
+
+.project-jump-number {
+    color:
+        rgba(
+            200,
+            255,
+            47,
+            0.45
+        );
+
+    font-size: 0.58rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.08em;
+}
+
+
+.project-jump-name {
+    font-size: 0.64rem;
+
+    font-weight: 700;
+
+    line-height: 1.3;
+
+    letter-spacing: 0.08em;
+}
+
+
+.project-jump-name strong {
+    display: block;
+
+    color: inherit;
+}
+
+
+/*
+   CURRENT PROJECT
+*/
+
+.project-jump-link.is-active {
+    color: var(--acid);
+
+    background:
+        rgba(
+            200,
+            255,
+            47,
+            0.07
+        );
+}
+
+
+.project-jump-link.is-active::before {
+    content: "";
+
+    position: absolute;
+
+    left: -2px;
+    top: 0;
+    bottom: 0;
+
+    width: 2px;
+
+    background: var(--acid);
+
+    box-shadow:
+        0 0 12px
+        rgba(
+            200,
+            255,
+            47,
+            0.75
+        );
+}
+
+
+.project-jump-link.is-active .project-jump-number {
+    color: var(--acid);
+}
+
+
+.project-jump-top {
+    display: block;
+
+    padding:
+        12px
+        14px;
+
+    color: var(--muted);
+
+    font-size: 0.52rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.12em;
+
+    text-decoration: none;
+}
+
+
+.project-jump-top:hover {
+    color: var(--acid);
+}
+
+
+/* ------------------------------------------------------------
+   PREVENT THE INDEX FROM CROWDING MEDIUM SCREENS
+------------------------------------------------------------ */
+
+@media (max-width: 1450px) {
+
+    .project-jump-panel {
+        width: 158px;
+
+        left: 10px;
+    }
+
+}
+
+
+/* ------------------------------------------------------------
+   SMALL SCREEN VERSION
+
+   Becomes a compact sticky project strip rather than
+   covering the actual project content.
+------------------------------------------------------------ */
+
+@media (max-width: 1050px) {
+
+    .project-jump-panel {
+        position: sticky;
+
+        top: 0;
+        left: auto;
+
+        width: 100%;
+
+        transform: none;
+
+        display: flex;
+
+        align-items: stretch;
+
+        overflow-x: auto;
+
+        border-left: 0;
+
+        border-right: 0;
+
+        z-index: 90;
+    }
+
+
+    .project-jump-header {
+        display: none;
+    }
+
+
+    .project-jump-link {
+        flex:
+            0
+            0
+            auto;
+
+        min-width: 150px;
+
+        border-bottom: 0;
+
+        border-right:
+            1px solid
+            rgba(
+                237,
+                243,
+                239,
+                0.10
+            );
+    }
+
+
+    .project-jump-link.is-active::before {
+        left: 0;
+        right: 0;
+        top: auto;
+        bottom: 0;
+
+        width: auto;
+        height: 2px;
+    }
+
+
+    .project-jump-top {
+        flex:
+            0
+            0
+            auto;
+
+        display: flex;
+
+        align-items: center;
+    }
+
+}
+
+
+@media (max-width: 560px) {
+
+    .project-jump-link {
+        min-width: 125px;
+    }
+
+
+    .project-jump-name {
+        font-size: 0.56rem;
+    }
+
+}
+
