@@ -4621,7 +4621,9 @@ footer {
 .project-jump-panel {
     position: fixed;
 
-    left: 18px;
+    left: auto;
+
+    right: 18px;
     top: 50%;
 
     transform: translateY(-50%);
@@ -4648,6 +4650,15 @@ footer {
         );
 
     border-left:
+        1px solid
+        rgba(
+            237,
+            243,
+            239,
+            0.14
+        );
+
+    border-right:
         2px solid
         var(--acid);
 
@@ -4812,7 +4823,8 @@ footer {
 
     position: absolute;
 
-    left: -2px;
+    left: auto;
+    right: -2px;
     top: 0;
     bottom: 0;
 
@@ -4971,4 +4983,5 @@ footer {
     }
 
 }
+
 
