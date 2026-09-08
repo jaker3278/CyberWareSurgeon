@@ -3502,6 +3502,16 @@ footer {
 }
 
 .home-portal-v2 .home-main-title .home-title-white {
-    color: var(--text);
+    color: #000;
+    -webkit-text-fill-color: #000;
+    -webkit-text-stroke: 1.5px var(--text);
+    paint-order: stroke fill;
 }
+
+.home-portal-v2 .home-main-title .home-title-line:not(.home-title-white) {
+    color: var(--acid);
+    -webkit-text-fill-color: var(--acid);
+    -webkit-text-stroke: 0;
+}
+
 
