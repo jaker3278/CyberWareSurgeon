@@ -1,0 +1,3494 @@
+﻿:root {
+    --black: #050706;
+    --black-soft: #090c0b;
+    --panel: #0d1110;
+    --panel-light: #131917;
+
+    --text: #edf3ef;
+    --muted: #89938e;
+
+    --acid: #c8ff2f;
+    --acid-soft: rgba(200, 255, 47, 0.12);
+
+    --line: rgba(237, 243, 239, 0.12);
+
+    --max-width: 1500px;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: auto;
+}
+
+
+body {
+    margin: 0;
+
+    background:
+        radial-gradient(
+            circle at 70% 10%,
+            rgba(200, 255, 47, 0.05),
+            transparent 30rem
+        ),
+        var(--black);
+
+    color: var(--text);
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    letter-spacing: 0.02em;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+.noise {
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: 0.035;
+
+    background-image:
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 2px,
+            #ffffff 3px
+        );
+
+    z-index: 999;
+}
+
+
+.site-header {
+    max-width: var(--max-width);
+
+    margin: 0 auto;
+
+    min-height: 90px;
+
+    padding: 0 32px;
+
+    display: grid;
+
+    grid-template-columns: 1fr auto 1fr;
+
+    align-items: center;
+
+    border-bottom: 1px solid var(--line);
+}
+
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+
+.brand-mark {
+    width: 42px;
+    height: 42px;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px solid var(--acid);
+
+    color: var(--acid);
+
+    font-size: 0.72rem;
+    font-weight: 800;
+}
+
+
+.brand-name {
+    font-weight: 800;
+    letter-spacing: 0.04em;
+}
+
+
+.brand-name span {
+    color: var(--acid);
+}
+
+
+.main-nav {
+    display: flex;
+    gap: 30px;
+
+    font-size: 0.76rem;
+    text-transform: uppercase;
+    letter-spacing: 0.11em;
+}
+
+
+.main-nav a {
+    color: var(--muted);
+}
+
+
+.main-nav a:hover {
+    color: var(--acid);
+}
+
+
+.system-status {
+    justify-self: end;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    color: var(--muted);
+
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+}
+
+
+.status-light {
+    width: 7px;
+    height: 7px;
+
+    background: var(--acid);
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 10px rgba(200, 255, 47, 0.8);
+}
+
+
+main {
+    overflow: hidden;
+}
+
+
+.hero {
+    max-width: var(--max-width);
+
+    margin: 0 auto;
+
+    padding:
+        clamp(80px, 10vw, 170px)
+        32px
+        120px;
+}
+
+
+.hero-grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.2fr)
+        minmax(380px, 0.8fr);
+
+    gap: clamp(60px, 10vw, 160px);
+
+    align-items: center;
+}
+
+
+.eyebrow {
+    margin: 0 0 18px;
+
+    color: var(--acid);
+
+    font-size: 0.72rem;
+    font-weight: 700;
+
+    letter-spacing: 0.16em;
+}
+
+
+h1,
+h2,
+h3,
+p {
+    margin-top: 0;
+}
+
+
+h1 {
+    max-width: 900px;
+
+    margin-bottom: 28px;
+
+    font-size:
+        clamp(3.5rem, 7vw, 8.5rem);
+
+    line-height: 0.86;
+
+    letter-spacing: -0.065em;
+}
+
+
+h1 span {
+    display: block;
+
+    color: transparent;
+
+    -webkit-text-stroke:
+        1px rgba(237, 243, 239, 0.55);
+}
+
+
+.hero-intro {
+    max-width: 690px;
+
+    color: var(--muted);
+
+    font-size:
+        clamp(1rem, 1.3vw, 1.2rem);
+
+    line-height: 1.75;
+}
+
+
+.hero-actions {
+    margin-top: 42px;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 14px;
+}
+
+
+.button {
+    min-height: 48px;
+
+    padding: 0 22px;
+
+    display: inline-flex;
+    align-items: center;
+
+    border: 1px solid var(--line);
+
+    font-size: 0.73rem;
+    font-weight: 800;
+
+    letter-spacing: 0.12em;
+}
+
+
+.button.primary {
+    background: var(--acid);
+
+    border-color: var(--acid);
+
+    color: #060806;
+}
+
+
+.button.secondary:hover {
+    border-color: var(--acid);
+
+    color: var(--acid);
+}
+
+
+.diagnostic-panel {
+    border:
+        1px solid rgba(200, 255, 47, 0.25);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(200, 255, 47, 0.04),
+            transparent 45%
+        ),
+        var(--panel);
+}
+
+
+.panel-header {
+    padding: 14px 17px;
+
+    display: flex;
+    justify-content: space-between;
+
+    border-bottom:
+        1px solid rgba(200, 255, 47, 0.2);
+
+    color: var(--acid);
+
+    font-size: 0.68rem;
+
+    letter-spacing: 0.13em;
+}
+
+
+.diagnostic-body {
+    min-height: 500px;
+
+    padding: 45px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.scanner {
+    width: min(300px, 80%);
+    aspect-ratio: 1;
+
+    margin: 0 auto 50px;
+
+    position: relative;
+
+    display: grid;
+    place-items: center;
+}
+
+
+.scanner-core {
+    width: 38%;
+    aspect-ratio: 1;
+
+    border:
+        1px solid rgba(200, 255, 47, 0.7);
+
+    transform:
+        rotate(45deg);
+
+    background:
+        var(--acid-soft);
+}
+
+
+.scanner-ring {
+    position: absolute;
+
+    border: 1px solid rgba(200, 255, 47, 0.3);
+
+    border-radius: 50%;
+}
+
+
+.ring-one {
+    width: 70%;
+    height: 70%;
+}
+
+
+.ring-two {
+    width: 100%;
+    height: 100%;
+
+    border-style: dashed;
+}
+
+
+.scanner-line {
+    position: absolute;
+
+    width: 100%;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--acid),
+            transparent
+        );
+
+    animation: scan 3.5s ease-in-out infinite;
+}
+
+
+@keyframes scan {
+
+    0%,
+    100% {
+        transform: translateY(-120px);
+        opacity: 0;
+    }
+
+    50% {
+        transform: translateY(120px);
+        opacity: 1;
+    }
+
+}
+
+
+.diagnostic-data p {
+    margin: 0;
+
+    padding: 11px 0;
+
+    display: flex;
+    justify-content: space-between;
+
+    border-top: 1px solid var(--line);
+
+    color: var(--muted);
+
+    font-size: 0.72rem;
+
+    letter-spacing: 0.08em;
+}
+
+
+.diagnostic-data strong {
+    color: var(--acid);
+}
+
+
+.manifesto,
+.services,
+.operation-flow,
+.commission {
+    max-width: var(--max-width);
+
+    margin: 0 auto;
+
+    padding:
+        120px
+        32px;
+
+    border-top: 1px solid var(--line);
+}
+
+
+.manifesto {
+    display: grid;
+
+    grid-template-columns:
+        minmax(80px, 0.25fr)
+        1fr;
+
+    gap: 50px;
+}
+
+
+.section-number {
+    color: var(--acid);
+
+    font-size:
+        clamp(3rem, 6vw, 6rem);
+
+    font-weight: 800;
+
+    opacity: 0.45;
+}
+
+
+h2 {
+    max-width: 1000px;
+
+    margin-bottom: 28px;
+
+    font-size:
+        clamp(2.7rem, 5vw, 6rem);
+
+    line-height: 0.95;
+
+    letter-spacing: -0.05em;
+}
+
+
+.manifesto p:not(.eyebrow) {
+    max-width: 650px;
+
+    color: var(--muted);
+
+    font-size: 1.1rem;
+
+    line-height: 1.7;
+}
+
+
+.section-heading {
+    margin-bottom: 55px;
+
+    display: flex;
+    justify-content: space-between;
+
+    gap: 40px;
+
+    align-items: end;
+}
+
+
+.section-code {
+    color: var(--muted);
+
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+}
+
+
+.service-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    border-top: 1px solid var(--line);
+
+    border-left: 1px solid var(--line);
+}
+
+
+.service-card {
+    min-height: 320px;
+
+    padding: 30px;
+
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+
+    background: var(--black-soft);
+}
+
+
+.service-number {
+    color: var(--acid);
+
+    font-size: 0.7rem;
+}
+
+
+.service-card h3 {
+    margin-top: 90px;
+
+    font-size: 1rem;
+
+    letter-spacing: 0.1em;
+}
+
+
+.service-card p {
+    color: var(--muted);
+
+    line-height: 1.65;
+
+    font-size: 0.92rem;
+}
+
+
+.procedure {
+    display: grid;
+
+    grid-template-columns:
+        1fr 70px
+        1fr 70px
+        1fr 70px
+        1fr;
+
+    align-items: start;
+}
+
+
+.procedure-step span {
+    display: block;
+
+    margin-bottom: 25px;
+
+    color: var(--acid);
+
+    font-size: 0.7rem;
+}
+
+
+.procedure-step strong {
+    display: block;
+
+    margin-bottom: 12px;
+
+    font-size: 1rem;
+
+    letter-spacing: 0.1em;
+}
+
+
+.procedure-step p {
+    color: var(--muted);
+
+    line-height: 1.6;
+}
+
+
+.procedure-line {
+    height: 1px;
+
+    margin-top: 48px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--acid),
+            rgba(200, 255, 47, 0.05)
+        );
+}
+
+
+.commission {
+    min-height: 600px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+
+.commission h2 span {
+    display: block;
+
+    color: var(--acid);
+}
+
+
+.commission > p:not(.eyebrow) {
+    max-width: 650px;
+
+    margin-bottom: 35px;
+
+    color: var(--muted);
+
+    line-height: 1.7;
+}
+
+
+footer {
+    max-width: var(--max-width);
+
+    margin: 0 auto;
+
+    padding: 25px 32px 40px;
+
+    display: flex;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    border-top: 1px solid var(--line);
+
+    color: var(--muted);
+
+    font-size: 0.68rem;
+
+    letter-spacing: 0.12em;
+}
+
+
+@media (max-width: 1000px) {
+
+    .site-header {
+        grid-template-columns: 1fr auto;
+    }
+
+    .main-nav {
+        display: none;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .diagnostic-panel {
+        max-width: 650px;
+    }
+
+    .service-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .procedure {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .procedure-line {
+        display: none;
+    }
+
+}
+
+
+@media (max-width: 640px) {
+
+    .site-header {
+        padding:
+            18px 20px;
+
+        gap: 20px;
+    }
+
+    .brand-name {
+        font-size: 0.8rem;
+    }
+
+    .system-status {
+        font-size: 0.6rem;
+    }
+
+    .hero,
+    .manifesto,
+    .services,
+    .operation-flow,
+    .commission {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .hero-grid {
+        gap: 50px;
+    }
+
+    .diagnostic-body {
+        min-height: 400px;
+
+        padding: 28px 20px;
+    }
+
+    .manifesto {
+        grid-template-columns: 1fr;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card {
+        min-height: 240px;
+    }
+
+    .service-card h3 {
+        margin-top: 50px;
+    }
+
+    .section-heading {
+        display: block;
+    }
+
+    .section-code {
+        display: block;
+
+        margin-top: 20px;
+    }
+
+    footer {
+        flex-direction: column;
+    }
+
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    * {
+        scroll-behavior: auto !important;
+    }
+
+    .scanner-line {
+        animation: none;
+    }
+
+}
+
+
+/* ============================================================
+   CYBERWARESURGEON PROJECT ARCHIVE V0.1
+   ============================================================ */
+
+
+.nav-active {
+    color: var(--acid) !important;
+}
+
+
+.projects-intro {
+    max-width: var(--max-width);
+
+    margin: 0 auto;
+
+    padding:
+        clamp(90px, 11vw, 180px)
+        32px
+        120px;
+
+    position: relative;
+}
+
+
+.projects-intro-code {
+    position: absolute;
+
+    top: 45px;
+    right: 32px;
+
+    color: var(--muted);
+
+    font-size: 0.65rem;
+
+    letter-spacing: 0.14em;
+}
+
+
+.projects-title {
+    max-width: 1200px;
+
+    margin-bottom: 35px;
+}
+
+
+.projects-lead {
+    max-width: 760px;
+
+    color: var(--muted);
+
+    font-size: clamp(
+        1rem,
+        1.4vw,
+        1.25rem
+    );
+
+    line-height: 1.75;
+}
+
+
+.archive-status {
+    max-width: 760px;
+
+    margin-top: 60px;
+
+    padding:
+        18px
+        0;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    border-top:
+        1px solid var(--line);
+
+    border-bottom:
+        1px solid var(--line);
+
+    font-size: 0.7rem;
+
+    letter-spacing: 0.12em;
+}
+
+
+.archive-status span {
+    color: var(--muted);
+}
+
+
+.archive-status strong {
+    color: var(--acid);
+}
+
+
+
+/* ============================================================
+   PROJECT STACK
+   ============================================================ */
+
+
+.project-stack {
+    max-width: var(--max-width);
+
+    margin: 0 auto;
+
+    padding:
+        0
+        32px;
+}
+
+
+.project-entry {
+    padding:
+        110px
+        0
+        130px;
+
+    border-top:
+        1px solid var(--line);
+}
+
+
+.project-entry-header {
+    margin-bottom: 55px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: end;
+
+    gap: 50px;
+}
+
+
+.project-entry-header h2 {
+    margin: 0;
+}
+
+
+.project-entry-header h2 span {
+    display: block;
+
+    color: var(--acid);
+}
+
+
+.project-index {
+    min-width: 200px;
+
+    padding-bottom: 12px;
+
+    text-align: right;
+
+    font-size: 0.68rem;
+
+    letter-spacing: 0.12em;
+}
+
+
+.project-index span,
+.project-index strong {
+    display: block;
+}
+
+
+.project-index span {
+    margin-bottom: 8px;
+
+    color: var(--muted);
+}
+
+
+.project-index strong {
+    color: var(--acid);
+}
+
+
+
+/* ============================================================
+   PROJECT HERO
+   ============================================================ */
+
+
+.project-hero-image {
+    margin:
+        0
+        0
+        70px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border:
+        1px solid rgba(
+            200,
+            255,
+            47,
+            0.18
+        );
+
+    background: #000;
+}
+
+
+.project-hero-image::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 18px;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    border:
+        1px solid rgba(
+            255,
+            255,
+            255,
+            0.07
+        );
+}
+
+
+.project-hero-image img {
+    width: 100%;
+
+    height: auto;
+
+    display: block;
+}
+
+
+
+/* ============================================================
+   PROJECT INFORMATION
+   ============================================================ */
+
+
+.project-information {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.15fr)
+        minmax(320px, 0.85fr);
+
+    gap:
+        clamp(
+            60px,
+            10vw,
+            160px
+        );
+}
+
+
+.project-statement h3 {
+    max-width: 750px;
+
+    margin-bottom: 30px;
+
+    font-size:
+        clamp(
+            2rem,
+            4vw,
+            4.8rem
+        );
+
+    line-height: 0.95;
+
+    letter-spacing: -0.045em;
+}
+
+
+.project-statement p:not(.eyebrow) {
+    max-width: 720px;
+
+    color: var(--muted);
+
+    line-height: 1.75;
+}
+
+
+.project-specification {
+    border-top:
+        1px solid var(--line);
+}
+
+
+.project-spec {
+    padding:
+        16px
+        0;
+
+    display: grid;
+
+    grid-template-columns:
+        120px
+        1fr;
+
+    gap: 20px;
+
+    border-bottom:
+        1px solid var(--line);
+
+    font-size: 0.7rem;
+
+    letter-spacing: 0.1em;
+}
+
+
+.project-spec span {
+    color: var(--muted);
+}
+
+
+.project-spec strong {
+    color: var(--text);
+
+    text-align: right;
+}
+
+
+
+/* ============================================================
+   TAGS
+   ============================================================ */
+
+
+.project-tags {
+    margin-top: 65px;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+
+.project-tags span {
+    padding:
+        9px
+        13px;
+
+    border:
+        1px solid rgba(
+            200,
+            255,
+            47,
+            0.24
+        );
+
+    color: var(--acid);
+
+    font-size: 0.64rem;
+
+    letter-spacing: 0.1em;
+}
+
+
+.project-entry-footer {
+    margin-top: 60px;
+
+    padding-top: 18px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    border-top:
+        1px solid var(--line);
+
+    color: var(--muted);
+
+    font-size: 0.64rem;
+
+    letter-spacing: 0.12em;
+}
+
+
+
+/* ============================================================
+   ARCHIVE END
+   ============================================================ */
+
+
+.archive-end {
+    max-width: var(--max-width);
+
+    min-height: 600px;
+
+    margin: 0 auto;
+
+    padding:
+        120px
+        32px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    border-top:
+        1px solid var(--line);
+}
+
+
+.archive-end h2 span {
+    display: block;
+
+    color: var(--acid);
+}
+
+
+
+/* ============================================================
+   PROJECT RESPONSIVE
+   ============================================================ */
+
+
+@media (max-width: 900px) {
+
+    .project-information {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 640px) {
+
+    .projects-intro,
+    .project-stack,
+    .archive-end {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+
+    .projects-intro-code {
+        position: static;
+
+        margin-bottom: 50px;
+    }
+
+
+    .archive-status {
+        flex-direction: column;
+
+        gap: 8px;
+    }
+
+
+    .project-entry {
+        padding-top: 80px;
+        padding-bottom: 90px;
+    }
+
+
+    .project-entry-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+
+    .project-index {
+        text-align: left;
+    }
+
+
+    .project-hero-image {
+        margin-bottom: 45px;
+    }
+
+
+    .project-spec {
+        grid-template-columns: 1fr;
+
+        gap: 5px;
+    }
+
+
+    .project-spec strong {
+        text-align: left;
+    }
+
+
+    .project-entry-footer {
+        flex-direction: column;
+
+        gap: 8px;
+    }
+
+}
+
+
+
+/* ============================================================
+   CYBERWARESURGEON MULTI PAGE V0.2
+   ============================================================ */
+
+
+.page-hero {
+    max-width: var(--max-width);
+
+    margin: 0 auto;
+
+    padding:
+        clamp(100px, 12vw, 190px)
+        32px
+        120px;
+}
+
+
+.page-lead {
+    max-width: 760px;
+
+    color: var(--muted);
+
+    font-size:
+        clamp(
+            1.05rem,
+            1.5vw,
+            1.3rem
+        );
+
+    line-height: 1.75;
+}
+
+
+.page-cta {
+    max-width: var(--max-width);
+
+    min-height: 550px;
+
+    margin: 0 auto;
+
+    padding:
+        120px
+        32px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    border-top:
+        1px solid var(--line);
+}
+
+
+.page-cta h2 span {
+    display: block;
+
+    color: var(--acid);
+}
+
+
+
+/* COMMISSION PAGE */
+
+
+.commission-layout {
+    max-width: var(--max-width);
+
+    margin: 0 auto;
+
+    padding:
+        120px
+        32px;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(360px, 0.8fr);
+
+    gap:
+        clamp(
+            60px,
+            10vw,
+            150px
+        );
+
+    border-top:
+        1px solid var(--line);
+}
+
+
+.commission-brief p:not(.eyebrow) {
+    max-width: 650px;
+
+    color: var(--muted);
+
+    line-height: 1.75;
+}
+
+
+.commission-brief .button {
+    margin-top: 30px;
+}
+
+
+.commission-diagnostic {
+    align-self: start;
+
+    border:
+        1px solid rgba(
+            200,
+            255,
+            47,
+            0.22
+        );
+
+    background: var(--panel);
+}
+
+
+.commission-checklist {
+    padding: 25px;
+}
+
+
+.commission-checklist > div {
+    padding:
+        22px
+        0;
+
+    border-bottom:
+        1px solid var(--line);
+}
+
+
+.commission-checklist > div:last-child {
+    border-bottom: 0;
+}
+
+
+.commission-checklist span {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: var(--acid);
+
+    font-size: 0.68rem;
+}
+
+
+.commission-checklist strong {
+    display: block;
+
+    margin-bottom: 8px;
+
+    letter-spacing: 0.08em;
+}
+
+
+.commission-checklist p {
+    margin-bottom: 0;
+
+    color: var(--muted);
+
+    line-height: 1.6;
+}
+
+
+@media (max-width: 900px) {
+
+    .commission-layout {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 640px) {
+
+    .page-hero,
+    .page-cta,
+    .commission-layout {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+}
+
+
+
+/* ============================================================
+   CYBERWARESURGEON HOME PORTAL V0.3
+   ============================================================ */
+
+
+.home-portal {
+    overflow: hidden;
+}
+
+
+/* ------------------------------------------------------------
+   HERO
+------------------------------------------------------------ */
+
+
+.portal-hero {
+    max-width: var(--max-width);
+
+    margin: 0 auto;
+
+    padding:
+        clamp(90px, 10vw, 160px)
+        32px
+        100px;
+}
+
+
+.portal-grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.2fr)
+        minmax(360px, 0.8fr);
+
+    gap:
+        clamp(
+            60px,
+            9vw,
+            150px
+        );
+
+    align-items: center;
+}
+
+
+.portal-system-line {
+    margin-bottom: 55px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+    color: var(--muted);
+
+    font-size: 0.62rem;
+
+    letter-spacing: 0.14em;
+}
+
+
+.portal-title {
+    max-width: 950px;
+
+    margin-bottom: 35px;
+
+    font-size:
+        clamp(
+            4rem,
+            8vw,
+            9rem
+        );
+
+    line-height: 0.84;
+}
+
+
+.portal-title span {
+    display: block;
+
+    color: var(--acid);
+
+    -webkit-text-stroke: 0;
+}
+
+
+.portal-intro {
+    max-width: 680px;
+
+    color: var(--muted);
+
+    font-size:
+        clamp(
+            1rem,
+            1.4vw,
+            1.2rem
+        );
+
+    line-height: 1.75;
+}
+
+
+.portal-directive {
+    margin-top: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    color: var(--muted);
+
+    font-size: 0.66rem;
+
+    letter-spacing: 0.16em;
+}
+
+
+.portal-directive p {
+    margin: 0;
+}
+
+
+.portal-directive-marker {
+    width: 8px;
+    height: 8px;
+
+    background: var(--acid);
+
+    box-shadow:
+        0 0 14px
+        rgba(200, 255, 47, 0.8);
+}
+
+
+
+/* ------------------------------------------------------------
+   PORTAL CORE
+------------------------------------------------------------ */
+
+
+.portal-core {
+    padding:
+        30px;
+
+    border:
+        1px solid
+        rgba(
+            200,
+            255,
+            47,
+            0.18
+        );
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(200,255,47,0.04),
+            transparent 55%
+        ),
+        var(--panel);
+}
+
+
+.portal-core-frame {
+    width:
+        min(
+            370px,
+            90%
+        );
+
+    aspect-ratio: 1;
+
+    margin:
+        30px
+        auto
+        55px;
+
+    position: relative;
+
+    display: grid;
+
+    place-items: center;
+}
+
+
+.portal-core-ring {
+    position: absolute;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(
+            200,
+            255,
+            47,
+            0.28
+        );
+}
+
+
+.portal-core-ring-a {
+    width: 100%;
+    height: 100%;
+
+    border-style: dashed;
+
+    animation:
+        core-spin
+        25s
+        linear
+        infinite;
+}
+
+
+.portal-core-ring-b {
+    width: 75%;
+    height: 75%;
+}
+
+
+.portal-core-ring-c {
+    width: 48%;
+    height: 48%;
+
+    border-color:
+        rgba(
+            200,
+            255,
+            47,
+            0.55
+        );
+}
+
+
+.portal-core-center {
+    width: 30%;
+    aspect-ratio: 1;
+
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    transform: rotate(45deg);
+
+    border:
+        1px solid var(--acid);
+
+    background:
+        rgba(
+            200,
+            255,
+            47,
+            0.06
+        );
+}
+
+
+.portal-core-center span,
+.portal-core-center strong {
+    transform: rotate(-45deg);
+}
+
+
+.portal-core-center span {
+    color: var(--acid);
+
+    font-weight: 800;
+}
+
+
+.portal-core-center strong {
+    margin-top: 7px;
+
+    color: var(--muted);
+
+    font-size: 0.52rem;
+
+    letter-spacing: 0.12em;
+}
+
+
+.portal-scan-line {
+    position: absolute;
+
+    width: 100%;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--acid),
+            transparent
+        );
+
+    animation:
+        portal-scan
+        4s
+        ease-in-out
+        infinite;
+}
+
+
+.portal-core-data {
+    border-top:
+        1px solid var(--line);
+}
+
+
+.portal-core-data span {
+    padding:
+        12px
+        0;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    border-bottom:
+        1px solid var(--line);
+
+    color: var(--muted);
+
+    font-size: 0.66rem;
+
+    letter-spacing: 0.1em;
+}
+
+
+.portal-core-data strong {
+    color: var(--acid);
+}
+
+
+@keyframes core-spin {
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+@keyframes portal-scan {
+
+    0%,
+    100% {
+        transform:
+            translateY(-140px);
+
+        opacity: 0;
+    }
+
+    50% {
+        transform:
+            translateY(140px);
+
+        opacity: 1;
+    }
+
+}
+
+
+
+/* ------------------------------------------------------------
+   THREE DOORS
+------------------------------------------------------------ */
+
+
+.portal-navigation {
+    max-width: var(--max-width);
+
+    margin: 0 auto;
+
+    padding:
+        0
+        32px
+        130px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    border-top:
+        1px solid var(--line);
+}
+
+
+.portal-door {
+    min-height: 430px;
+
+    padding:
+        30px;
+
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    border-right:
+        1px solid var(--line);
+
+    border-bottom:
+        1px solid var(--line);
+
+    transition:
+        background 180ms ease,
+        border-color 180ms ease;
+}
+
+
+.portal-door:first-child {
+    border-left:
+        1px solid var(--line);
+}
+
+
+.portal-door:hover {
+    background:
+        rgba(
+            200,
+            255,
+            47,
+            0.035
+        );
+
+    border-color:
+        rgba(
+            200,
+            255,
+            47,
+            0.3
+        );
+}
+
+
+.portal-door-index {
+    color: var(--muted);
+
+    font-size: 0.7rem;
+
+    letter-spacing: 0.12em;
+}
+
+
+.portal-door-content h2 {
+    margin-bottom: 22px;
+
+    font-size:
+        clamp(
+            2.3rem,
+            4vw,
+            4.8rem
+        );
+}
+
+
+.portal-door-content h2 span {
+    display: block;
+
+    color: var(--acid);
+}
+
+
+.portal-door-content p:not(.eyebrow) {
+    max-width: 360px;
+
+    color: var(--muted);
+
+    line-height: 1.65;
+}
+
+
+.portal-door-arrow {
+    align-self: flex-end;
+
+    color: var(--acid);
+
+    font-size: 2rem;
+}
+
+
+.featured-door::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 2px;
+
+    background:
+        var(--acid);
+}
+
+
+
+/* ------------------------------------------------------------
+   FEATURED OPERATION
+------------------------------------------------------------ */
+
+
+.featured-operation {
+    max-width: var(--max-width);
+
+    margin: 0 auto;
+
+    padding:
+        120px
+        32px;
+
+    border-top:
+        1px solid var(--line);
+}
+
+
+.featured-operation-heading {
+    margin-bottom: 55px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: end;
+
+    gap: 40px;
+}
+
+
+.featured-operation-heading h2 {
+    margin-bottom: 0;
+}
+
+
+.featured-operation-heading h2 span {
+    display: block;
+
+    color: var(--acid);
+}
+
+
+.featured-operation-status {
+    text-align: right;
+
+    font-size: 0.66rem;
+
+    letter-spacing: 0.12em;
+}
+
+
+.featured-operation-status span,
+.featured-operation-status strong {
+    display: block;
+}
+
+
+.featured-operation-status span {
+    margin-bottom: 8px;
+
+    color: var(--muted);
+}
+
+
+.featured-operation-status strong {
+    color: var(--acid);
+}
+
+
+.featured-operation-card {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.45fr)
+        minmax(330px, 0.55fr);
+
+    border:
+        1px solid var(--line);
+
+    background: var(--black-soft);
+}
+
+
+.featured-operation-image {
+    overflow: hidden;
+
+    background: #000;
+}
+
+
+.featured-operation-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+.featured-operation-copy {
+    padding:
+        clamp(
+            35px,
+            5vw,
+            70px
+        );
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+
+.featured-operation-copy h3 {
+    max-width: 520px;
+
+    margin-bottom: 25px;
+
+    font-size:
+        clamp(
+            2rem,
+            3.5vw,
+            4rem
+        );
+
+    line-height: 0.95;
+
+    letter-spacing: -0.04em;
+}
+
+
+.featured-operation-copy > p:not(.eyebrow) {
+    color: var(--muted);
+
+    line-height: 1.7;
+}
+
+
+.featured-operation-link {
+    margin-top: 35px;
+
+    padding-top: 18px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    border-top:
+        1px solid var(--line);
+
+    color: var(--acid);
+
+    font-size: 0.7rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.12em;
+}
+
+
+
+/* ------------------------------------------------------------
+   CLOSING
+------------------------------------------------------------ */
+
+
+.portal-closing {
+    max-width: var(--max-width);
+
+    margin: 0 auto;
+
+    padding:
+        34px
+        32px
+        50px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    border-top:
+        1px solid var(--line);
+
+    font-size: 0.66rem;
+
+    letter-spacing: 0.13em;
+}
+
+
+.portal-closing span {
+    color: var(--muted);
+}
+
+
+.portal-closing strong {
+    color: var(--acid);
+}
+
+
+
+/* ------------------------------------------------------------
+   RESPONSIVE
+------------------------------------------------------------ */
+
+
+@media (max-width: 1000px) {
+
+    .portal-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .portal-core {
+        max-width: 650px;
+    }
+
+
+    .portal-navigation {
+        grid-template-columns: 1fr;
+    }
+
+
+    .portal-door {
+        min-height: 280px;
+    }
+
+
+    .featured-operation-card {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 640px) {
+
+    .portal-hero,
+    .portal-navigation,
+    .featured-operation,
+    .portal-closing {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+
+    .portal-system-line {
+        flex-direction: column;
+    }
+
+
+    .portal-title {
+        font-size:
+            clamp(
+                3.3rem,
+                18vw,
+                5rem
+            );
+    }
+
+
+    .portal-core {
+        padding: 20px;
+    }
+
+
+    .portal-door {
+        padding:
+            28px
+            20px;
+    }
+
+
+    .featured-operation-heading {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    .featured-operation-status {
+        text-align: left;
+    }
+
+
+    .featured-operation-copy {
+        padding:
+            35px
+            20px;
+    }
+
+
+    .portal-closing {
+        flex-direction: column;
+    }
+
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    .portal-core-ring-a,
+    .portal-scan-line {
+        animation: none;
+    }
+
+}
+
+
+
+
+/* ============================================================
+   CYBERWARESURGEON NAV ORGANISATION V0.4
+   ============================================================ */
+
+
+/*
+    Brand is now explicitly interactive.
+
+    CWS + CYBERWARESURGEON
+    always means HOME.
+*/
+
+.brand {
+    cursor: pointer;
+}
+
+
+.brand:hover .brand-mark {
+    background:
+        rgba(
+            200,
+            255,
+            47,
+            0.08
+        );
+}
+
+
+.brand:hover .brand-name {
+    color: var(--text);
+}
+
+
+.brand:hover .brand-name span {
+    color: var(--acid);
+}
+
+
+
+/* ------------------------------------------------------------
+   MAIN NAVIGATION
+------------------------------------------------------------ */
+
+
+.main-nav a {
+    position: relative;
+
+    padding:
+        12px
+        0;
+
+    color: var(--muted);
+
+    transition:
+        color 160ms ease;
+}
+
+
+.main-nav a:hover {
+    color: var(--text);
+}
+
+
+.main-nav a.nav-active {
+    color: var(--acid);
+}
+
+
+.main-nav a.nav-active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 4px;
+
+    height: 1px;
+
+    background: var(--acid);
+}
+
+
+
+/* ------------------------------------------------------------
+   NAVIGATION SEMANTICS
+
+   HOME
+   index.html
+
+   THE SURGERY
+   surgery.html
+
+   CYBERWARE
+   projects.html
+
+   COMMISSION
+   commission.html
+------------------------------------------------------------ */
+
+
+
+
+/* ============================================================
+   CYBERWARESURGEON HOME PORTAL V0.5
+   ============================================================ */
+
+
+.home-portal-v2 {
+    overflow: hidden;
+}
+
+
+
+/* ============================================================
+   PRIMARY ENTRY
+   ============================================================ */
+
+
+.home-portal-v2 .home-entry {
+
+    max-width: var(--max-width);
+
+    margin: 0 auto;
+
+    padding:
+        clamp(90px, 9vw, 150px)
+        32px
+        clamp(90px, 9vw, 140px);
+
+}
+
+
+.home-portal-v2 .home-entry-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.25fr)
+        minmax(340px, 0.75fr);
+
+    gap:
+        clamp(
+            60px,
+            9vw,
+            150px
+        );
+
+    align-items: center;
+
+}
+
+
+
+/* KICKER */
+
+
+.home-portal-v2 .home-kicker {
+
+    margin-bottom: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: var(--muted);
+
+    font-size: 0.63rem;
+
+    letter-spacing: 0.15em;
+
+}
+
+
+.home-portal-v2 .home-kicker-light {
+
+    width: 7px;
+    height: 7px;
+
+    flex: 0 0 auto;
+
+    background: var(--acid);
+
+    box-shadow:
+        0 0 13px
+        rgba(200, 255, 47, 0.75);
+
+}
+
+
+
+/* MAIN TITLE */
+
+
+.home-portal-v2 .home-main-title {
+
+    max-width: 1000px;
+
+    margin:
+        0
+        0
+        35px;
+
+    font-size:
+        clamp(
+            4rem,
+            8vw,
+            9rem
+        );
+
+    line-height: 0.82;
+
+    letter-spacing: -0.07em;
+
+}
+
+
+.home-portal-v2 .home-main-title span {
+
+    display: block;
+
+    color: var(--acid);
+
+    -webkit-text-stroke: 0;
+
+}
+
+
+.home-portal-v2 .home-main-intro {
+
+    max-width: 660px;
+
+    color: var(--muted);
+
+    font-size:
+        clamp(
+            1rem,
+            1.3vw,
+            1.18rem
+        );
+
+    line-height: 1.75;
+
+}
+
+
+
+/* SELECT DESTINATION */
+
+
+.home-portal-v2 .home-select-message {
+
+    max-width: 660px;
+
+    margin-top: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    color: var(--muted);
+
+    font-size: 0.63rem;
+
+    letter-spacing: 0.16em;
+
+}
+
+
+.home-portal-v2 .home-select-line {
+
+    height: 1px;
+
+    flex: 1;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(200,255,47,0.8),
+            transparent
+        );
+
+}
+
+
+
+/* ============================================================
+   CORE GRAPHIC
+   ============================================================ */
+
+
+.home-portal-v2 .home-core {
+
+    padding:
+        32px;
+
+    border:
+        1px solid
+        rgba(200,255,47,0.18);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(200,255,47,0.045),
+            transparent 55%
+        ),
+        var(--panel);
+
+}
+
+
+.home-portal-v2 .home-core-outer {
+
+    width:
+        min(
+            360px,
+            90%
+        );
+
+    aspect-ratio: 1;
+
+    margin:
+        25px
+        auto
+        50px;
+
+    position: relative;
+
+    display: grid;
+
+    place-items: center;
+
+}
+
+
+.home-portal-v2 .home-core-ring {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(200,255,47,0.28);
+
+}
+
+
+.home-portal-v2 .ring-alpha {
+
+    width: 100%;
+    height: 100%;
+
+    border-style: dashed;
+
+    animation:
+        cws-home-spin
+        30s
+        linear
+        infinite;
+
+}
+
+
+.home-portal-v2 .ring-beta {
+
+    width: 72%;
+    height: 72%;
+
+}
+
+
+.home-portal-v2 .ring-gamma {
+
+    width: 46%;
+    height: 46%;
+
+    border-color:
+        rgba(200,255,47,0.55);
+
+}
+
+
+.home-portal-v2 .home-core-cross {
+
+    position: absolute;
+
+    background:
+        rgba(200,255,47,0.12);
+
+}
+
+
+.home-portal-v2 .home-core-cross.horizontal {
+
+    width: 100%;
+    height: 1px;
+
+}
+
+
+.home-portal-v2 .home-core-cross.vertical {
+
+    width: 1px;
+    height: 100%;
+
+}
+
+
+.home-portal-v2 .home-core-centre {
+
+    width: 28%;
+    aspect-ratio: 1;
+
+    position: relative;
+
+    z-index: 3;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transform: rotate(45deg);
+
+    border:
+        1px solid var(--acid);
+
+    background:
+        rgba(200,255,47,0.07);
+
+}
+
+
+.home-portal-v2 .home-core-centre span,
+.home-portal-v2 .home-core-centre strong {
+
+    transform: rotate(-45deg);
+
+}
+
+
+.home-portal-v2 .home-core-centre span {
+
+    color: var(--acid);
+
+    font-size: 1.1rem;
+
+    font-weight: 900;
+
+}
+
+
+.home-portal-v2 .home-core-centre strong {
+
+    margin-top: 7px;
+
+    color: var(--muted);
+
+    font-size: 0.52rem;
+
+    letter-spacing: 0.12em;
+
+}
+
+
+.home-portal-v2 .home-core-scan {
+
+    position: absolute;
+
+    width: 100%;
+    height: 1px;
+
+    z-index: 4;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--acid),
+            transparent
+        );
+
+    animation:
+        cws-home-scan
+        4s
+        ease-in-out
+        infinite;
+
+}
+
+
+.home-portal-v2 .home-core-readout {
+
+    border-top:
+        1px solid var(--line);
+
+}
+
+
+.home-portal-v2 .home-core-readout > div {
+
+    padding:
+        12px
+        0;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    border-bottom:
+        1px solid var(--line);
+
+    font-size: 0.65rem;
+
+    letter-spacing: 0.1em;
+
+}
+
+
+.home-portal-v2 .home-core-readout span {
+
+    color: var(--muted);
+
+}
+
+
+.home-portal-v2 .home-core-readout strong {
+
+    color: var(--acid);
+
+}
+
+
+
+/* ============================================================
+   THREE DESTINATIONS
+   ============================================================ */
+
+
+.home-portal-v2 .home-destinations {
+
+    max-width: var(--max-width);
+
+    margin: 0 auto;
+
+    padding:
+        0
+        32px
+        130px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+}
+
+
+.home-portal-v2 .home-destination {
+
+    min-height: 400px;
+
+    padding:
+        28px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    position: relative;
+
+    border-top:
+        1px solid var(--line);
+
+    border-right:
+        1px solid var(--line);
+
+    border-bottom:
+        1px solid var(--line);
+
+    background:
+        rgba(255,255,255,0.005);
+
+    transition:
+        background 150ms ease,
+        border-color 150ms ease;
+
+}
+
+
+.home-portal-v2 .home-destination:first-child {
+
+    border-left:
+        1px solid var(--line);
+
+}
+
+
+.home-portal-v2 .home-destination:hover {
+
+    background:
+        rgba(200,255,47,0.035);
+
+    border-color:
+        rgba(200,255,47,0.32);
+
+}
+
+
+.home-portal-v2 .home-destination-primary::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 2px;
+
+    background: var(--acid);
+
+}
+
+
+.home-portal-v2 .home-destination-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    font-size: 0.64rem;
+
+    letter-spacing: 0.12em;
+
+}
+
+
+.home-portal-v2 .home-destination-number {
+
+    color: var(--acid);
+
+}
+
+
+.home-portal-v2 .home-destination-code {
+
+    color: var(--muted);
+
+}
+
+
+.home-portal-v2 .home-destination-main p {
+
+    margin-bottom: 10px;
+
+    color: var(--muted);
+
+    font-size: 0.65rem;
+
+    letter-spacing: 0.15em;
+
+}
+
+
+.home-portal-v2 .home-destination-main h2 {
+
+    margin: 0;
+
+    font-size:
+        clamp(
+            2.5rem,
+            4.5vw,
+            5rem
+        );
+
+    line-height: 0.88;
+
+}
+
+
+.home-portal-v2 .home-destination-main h2 span {
+
+    display: block;
+
+    color: var(--acid);
+
+}
+
+
+.home-portal-v2 .home-destination-bottom {
+
+    padding-top: 18px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    border-top:
+        1px solid var(--line);
+
+    color: var(--muted);
+
+    font-size: 0.61rem;
+
+    letter-spacing: 0.11em;
+
+}
+
+
+.home-portal-v2 .home-destination-bottom strong {
+
+    color: var(--acid);
+
+    font-size: 1.3rem;
+
+}
+
+
+
+/* ============================================================
+   CURRENT OPERATION
+   ============================================================ */
+
+
+.home-portal-v2 .home-current-operation {
+
+    max-width: var(--max-width);
+
+    margin: 0 auto;
+
+    padding:
+        110px
+        32px;
+
+    border-top:
+        1px solid var(--line);
+
+}
+
+
+.home-portal-v2 .home-current-header {
+
+    margin-bottom: 45px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: end;
+
+    gap: 40px;
+
+}
+
+
+.home-portal-v2 .home-current-header h2 {
+
+    margin: 0;
+
+}
+
+
+.home-portal-v2 .home-current-header h2 span {
+
+    display: block;
+
+    color: var(--acid);
+
+}
+
+
+.home-portal-v2 .home-operation-status {
+
+    padding-bottom: 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    color: var(--acid);
+
+    font-size: 0.64rem;
+
+    letter-spacing: 0.12em;
+
+}
+
+
+
+/* CARD */
+
+
+.home-portal-v2 .home-operation-card {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.4fr)
+        minmax(300px, 0.6fr);
+
+    overflow: hidden;
+
+    border:
+        1px solid var(--line);
+
+    background: var(--black-soft);
+
+}
+
+
+.home-portal-v2 .home-operation-image {
+
+    min-width: 0;
+
+    background: #000;
+
+}
+
+
+.home-portal-v2 .home-operation-image img {
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+}
+
+
+.home-portal-v2 .home-operation-information {
+
+    padding:
+        clamp(
+            35px,
+            5vw,
+            70px
+        );
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+}
+
+
+.home-portal-v2 .home-operation-project {
+
+    margin-bottom: 30px;
+
+    color: var(--acid);
+
+    font-size: 0.65rem;
+
+    letter-spacing: 0.14em;
+
+}
+
+
+.home-portal-v2 .home-operation-information h3 {
+
+    margin-bottom: 25px;
+
+    font-size:
+        clamp(
+            2rem,
+            3.5vw,
+            4.2rem
+        );
+
+    line-height: 0.95;
+
+    letter-spacing: -0.045em;
+
+}
+
+
+.home-portal-v2 .home-operation-information p {
+
+    color: var(--muted);
+
+    line-height: 1.7;
+
+}
+
+
+.home-portal-v2 .home-operation-open {
+
+    margin-top: 35px;
+
+    padding-top: 18px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    border-top:
+        1px solid var(--line);
+
+    color: var(--acid);
+
+    font-size: 0.67rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.12em;
+
+}
+
+
+
+/* ============================================================
+   SIGNAL BAR
+   ============================================================ */
+
+
+.home-portal-v2 .home-signal-bar {
+
+    max-width: var(--max-width);
+
+    margin: 0 auto;
+
+    padding:
+        30px
+        32px
+        45px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    border-top:
+        1px solid var(--line);
+
+    color: var(--muted);
+
+    font-size: 0.62rem;
+
+    letter-spacing: 0.13em;
+
+}
+
+
+.home-portal-v2 .home-signal-bar strong {
+
+    color: var(--acid);
+
+}
+
+
+
+/* ============================================================
+   MOTION
+   ============================================================ */
+
+
+@keyframes cws-home-spin {
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+@keyframes cws-home-scan {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(-135px);
+
+        opacity: 0;
+
+    }
+
+    50% {
+
+        transform:
+            translateY(135px);
+
+        opacity: 1;
+
+    }
+
+}
+
+
+
+/* ============================================================
+   TABLET
+   ============================================================ */
+
+
+@media (max-width: 1000px) {
+
+    .home-portal-v2 .home-entry-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .home-portal-v2 .home-core {
+
+        max-width: 650px;
+
+    }
+
+
+    .home-portal-v2 .home-destinations {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .home-portal-v2 .home-destination {
+
+        min-height: 280px;
+
+        border-left:
+            1px solid var(--line);
+
+    }
+
+
+    .home-portal-v2 .home-operation-card {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+
+@media (max-width: 640px) {
+
+    .home-portal-v2 .home-entry,
+    .home-portal-v2 .home-destinations,
+    .home-portal-v2 .home-current-operation,
+    .home-portal-v2 .home-signal-bar {
+
+        padding-left: 20px;
+        padding-right: 20px;
+
+    }
+
+
+    .home-portal-v2 .home-main-title {
+
+        font-size:
+            clamp(
+                3.4rem,
+                18vw,
+                5rem
+            );
+
+    }
+
+
+    .home-portal-v2 .home-core {
+
+        padding: 20px;
+
+    }
+
+
+    .home-portal-v2 .home-current-header {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+
+    .home-portal-v2 .home-operation-information {
+
+        padding:
+            35px
+            20px;
+
+    }
+
+
+    .home-portal-v2 .home-signal-bar {
+
+        flex-direction: column;
+
+    }
+
+}
+
+
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    .home-portal-v2 .ring-alpha,
+    .home-portal-v2 .home-core-scan {
+
+        animation: none;
+
+    }
+
+}
+
