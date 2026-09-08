@@ -5147,3 +5147,214 @@ footer {
 
 }
 
+
+
+/* ============================================================
+   CYBERWARESURGEON HOME FULL CURRENT PROJECT V1
+   ============================================================ */
+
+
+/* ------------------------------------------------------------
+   CURRENT OPERATION CONTAINER
+------------------------------------------------------------ */
+
+.home-portal-v2 .home-current-operation-full {
+    padding-top: 90px;
+    padding-bottom: 110px;
+}
+
+
+/* ------------------------------------------------------------
+   CURRENT OPERATION STATUS BAR
+------------------------------------------------------------ */
+
+.home-portal-v2 .home-featured-project-bar {
+    margin-bottom: 32px;
+
+    padding:
+        15px
+        0
+        17px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 30px;
+
+    border-top:
+        1px solid
+        rgba(
+            200,
+            255,
+            47,
+            0.38
+        );
+
+    border-bottom:
+        1px solid
+        rgba(
+            237,
+            243,
+            239,
+            0.12
+        );
+}
+
+
+.home-portal-v2 .home-featured-project-bar > div {
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+}
+
+
+.home-portal-v2 .home-featured-signal {
+    color: var(--acid);
+
+    font-size: 0.60rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.15em;
+}
+
+
+.home-portal-v2 .home-featured-project-bar strong {
+    color: var(--text);
+
+    font-size: 0.60rem;
+
+    letter-spacing: 0.12em;
+}
+
+
+.home-portal-v2 .home-featured-archive-link {
+    color: var(--muted);
+
+    font-size: 0.58rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.11em;
+
+    text-decoration: none;
+
+    transition:
+        color 130ms ease;
+}
+
+
+.home-portal-v2 .home-featured-archive-link:hover {
+    color: var(--acid);
+}
+
+
+/* ------------------------------------------------------------
+   FULL PROJECT RECORD
+------------------------------------------------------------ */
+
+.home-portal-v2.projects-page
+.home-current-operation-full
+.project-entry {
+
+    padding-top: 55px;
+    padding-bottom: 20px;
+}
+
+
+/*
+   Archive counter normally begins at 01 because projects
+   are sequential inside the archive.
+
+   This is Project 003, so force the large background
+   drawing-sheet number to 03 on the homepage.
+*/
+
+.home-portal-v2.projects-page
+.home-current-operation-full
+.project-entry::before {
+
+    content: "03";
+}
+
+
+/* ------------------------------------------------------------
+   KEEP THE PROJECT TITLE AS THE DOMINANT PROJECT ELEMENT
+------------------------------------------------------------ */
+
+.home-portal-v2.projects-page
+.home-current-operation-full
+.project-entry-header {
+
+    margin-bottom: 52px;
+}
+
+
+/* ------------------------------------------------------------
+   GALLERY
+------------------------------------------------------------ */
+
+.home-portal-v2.projects-page
+.home-current-operation-full
+.project-gallery {
+
+    margin-bottom: 72px;
+}
+
+
+/* ------------------------------------------------------------
+   PROJECT FOOTER
+------------------------------------------------------------ */
+
+.home-portal-v2.projects-page
+.home-current-operation-full
+.project-entry-footer {
+
+    margin-bottom: 0;
+}
+
+
+/* ------------------------------------------------------------
+   TABLET
+------------------------------------------------------------ */
+
+@media (max-width: 900px) {
+
+    .home-portal-v2 .home-featured-project-bar {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+}
+
+
+/* ------------------------------------------------------------
+   MOBILE
+------------------------------------------------------------ */
+
+@media (max-width: 560px) {
+
+    .home-portal-v2 .home-current-operation-full {
+        padding-top: 65px;
+        padding-bottom: 80px;
+    }
+
+
+    .home-portal-v2 .home-featured-project-bar > div {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 6px;
+    }
+
+}
+
