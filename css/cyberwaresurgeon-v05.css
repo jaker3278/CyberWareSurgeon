@@ -4026,3 +4026,17 @@ footer {
 }
 
 
+
+/* ============================================================
+   CYBERWARE PROJECT TYPOGRAPHY — FINAL OVERRIDE V0.9
+   Keep Operation Brief headline ~50% smaller than project title.
+   ============================================================ */
+
+body.projects-page .project-entry .project-statement h3 {
+    font-size: clamp(1.2rem, 2vw, 2.4rem) !important;
+    line-height: 1.05 !important;
+    letter-spacing: -0.025em !important;
+    max-width: 680px;
+    margin-bottom: 24px;
+}
+
