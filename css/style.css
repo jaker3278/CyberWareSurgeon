@@ -22,7 +22,7 @@
 
 
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: auto;
 }
 
 
@@ -2342,4 +2342,108 @@ footer {
     }
 
 }
+
+
+
+
+/* ============================================================
+   CYBERWARESURGEON NAV ORGANISATION V0.4
+   ============================================================ */
+
+
+/*
+    Brand is now explicitly interactive.
+
+    CWS + CYBERWARESURGEON
+    always means HOME.
+*/
+
+.brand {
+    cursor: pointer;
+}
+
+
+.brand:hover .brand-mark {
+    background:
+        rgba(
+            200,
+            255,
+            47,
+            0.08
+        );
+}
+
+
+.brand:hover .brand-name {
+    color: var(--text);
+}
+
+
+.brand:hover .brand-name span {
+    color: var(--acid);
+}
+
+
+
+/* ------------------------------------------------------------
+   MAIN NAVIGATION
+------------------------------------------------------------ */
+
+
+.main-nav a {
+    position: relative;
+
+    padding:
+        12px
+        0;
+
+    color: var(--muted);
+
+    transition:
+        color 160ms ease;
+}
+
+
+.main-nav a:hover {
+    color: var(--text);
+}
+
+
+.main-nav a.nav-active {
+    color: var(--acid);
+}
+
+
+.main-nav a.nav-active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 4px;
+
+    height: 1px;
+
+    background: var(--acid);
+}
+
+
+
+/* ------------------------------------------------------------
+   NAVIGATION SEMANTICS
+
+   HOME
+   index.html
+
+   THE SURGERY
+   surgery.html
+
+   CYBERWARE
+   projects.html
+
+   COMMISSION
+   commission.html
+------------------------------------------------------------ */
+
 
