@@ -5127,3 +5127,23 @@ footer {
 
 }
 
+
+
+/* ============================================================
+   CYBERWARESURGEON GLOBAL DESKTOP SCALE V1
+
+   Visual target:
+   approximately equivalent to viewing the site
+   at 80% browser zoom.
+
+   Applied only to desktop layouts.
+   ============================================================ */
+
+@media (min-width: 1100px) {
+
+    html {
+        zoom: 0.8;
+    }
+
+}
+
