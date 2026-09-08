@@ -5358,3 +5358,26 @@ footer {
 
 }
 
+
+
+/* ============================================================
+   CYBERWARESURGEON CURRENT OPERATION EMPHASIS V1
+   ============================================================ */
+
+.home-portal-v2 .home-featured-signal {
+    font-size:
+        clamp(
+            1.15rem,
+            1.7vw,
+            1.8rem
+        );
+
+    font-weight: 900;
+
+    line-height: 1;
+
+    letter-spacing: 0.08em;
+
+    color: var(--acid);
+}
+
