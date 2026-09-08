@@ -4014,3 +4014,596 @@ footer {
 
 
 
+
+
+/* ============================================================
+   CYBERWARESURGEON PROJECT ARCHIVE POLISH V1
+   ============================================================ */
+
+
+/* ------------------------------------------------------------
+   PROJECT STACK RHYTHM
+------------------------------------------------------------ */
+
+.projects-page .project-stack {
+    counter-reset: cws-project;
+
+    max-width: var(--max-width);
+
+    margin: 0 auto;
+
+    padding:
+        0
+        32px;
+}
+
+
+.projects-page .project-entry {
+    counter-increment: cws-project;
+
+    position: relative;
+
+    padding:
+        120px
+        0
+        140px;
+
+    border-top:
+        1px solid
+        rgba(
+            237,
+            243,
+            239,
+            0.12
+        );
+}
+
+
+/*
+    Every project after the first gets
+    a slightly stronger separator.
+*/
+
+.projects-page .project-entry + .project-entry {
+    border-top:
+        1px solid
+        rgba(
+            200,
+            255,
+            47,
+            0.32
+        );
+}
+
+
+/*
+    Large quiet archive number.
+
+    Does not replace PROJECT // 001.
+    It acts like technical drawing indexing.
+*/
+
+.projects-page .project-entry::before {
+    content:
+        "0"
+        counter(cws-project);
+
+    position: absolute;
+
+    top: 72px;
+    right: 0;
+
+    color:
+        rgba(
+            200,
+            255,
+            47,
+            0.055
+        );
+
+    font-size:
+        clamp(
+            5rem,
+            10vw,
+            10rem
+        );
+
+    font-weight: 900;
+
+    line-height: 1;
+
+    letter-spacing: -0.08em;
+
+    pointer-events: none;
+}
+
+
+
+/* ------------------------------------------------------------
+   PROJECT HEADER
+------------------------------------------------------------ */
+
+.projects-page .project-entry-header {
+    min-height: 160px;
+
+    margin-bottom: 52px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+
+    gap: 60px;
+}
+
+
+.projects-page .project-entry-header > div:first-child {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.projects-page .project-entry-header .eyebrow {
+    margin-bottom: 14px;
+}
+
+
+.projects-page .project-entry-header h2 {
+    margin: 0;
+
+    line-height: 0.88;
+}
+
+
+.projects-page .project-index {
+    min-width: 220px;
+
+    padding:
+        0
+        0
+        13px;
+
+    position: relative;
+
+    z-index: 2;
+
+    text-align: right;
+
+    border-bottom:
+        1px solid
+        rgba(
+            200,
+            255,
+            47,
+            0.28
+        );
+}
+
+
+.projects-page .project-index span {
+    margin-bottom: 7px;
+
+    display: block;
+
+    color: var(--muted);
+}
+
+
+.projects-page .project-index strong {
+    display: block;
+
+    color: var(--acid);
+}
+
+
+
+/* ------------------------------------------------------------
+   GALLERY RHYTHM
+------------------------------------------------------------ */
+
+.projects-page .project-gallery {
+    margin:
+        0
+        0
+        72px;
+
+    border-top:
+        1px solid var(--line);
+
+    border-bottom:
+        1px solid var(--line);
+}
+
+
+.projects-page .project-gallery-toolbar {
+    min-height: 74px;
+
+    padding:
+        14px
+        0;
+}
+
+
+.projects-page .project-gallery-window {
+    border-top:
+        1px solid
+        rgba(
+            237,
+            243,
+            239,
+            0.10
+        );
+}
+
+
+/*
+    Preserve four images across desktop,
+    but make every project use the exact same geometry.
+*/
+
+.projects-page .project-gallery-track {
+    gap: 12px;
+}
+
+
+.projects-page .project-gallery-slide {
+    flex:
+        0
+        0
+        calc(
+            (100% - 36px) / 4
+        );
+
+    aspect-ratio: 4 / 5;
+
+    border-right:
+        1px solid
+        rgba(
+            237,
+            243,
+            239,
+            0.10
+        );
+}
+
+
+/*
+    Give captions identical visual weight.
+*/
+
+.projects-page .project-gallery-slide figcaption {
+    min-height: 48px;
+
+    padding:
+        22px
+        14px
+        13px;
+
+    align-items: flex-end;
+}
+
+
+
+/* ------------------------------------------------------------
+   PROJECT INFORMATION
+------------------------------------------------------------ */
+
+.projects-page .project-information {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.1fr)
+        minmax(340px, 0.9fr);
+
+    gap:
+        clamp(
+            70px,
+            9vw,
+            150px
+        );
+
+    align-items: start;
+}
+
+
+.projects-page .project-statement {
+    max-width: 760px;
+}
+
+
+.projects-page .project-statement .eyebrow {
+    margin-bottom: 14px;
+}
+
+
+.projects-page .project-statement h3 {
+    max-width: 680px;
+
+    margin-bottom: 27px;
+
+    font-size:
+        clamp(
+            1.2rem,
+            2vw,
+            2.4rem
+        );
+
+    line-height: 1.05;
+
+    letter-spacing: -0.025em;
+}
+
+
+.projects-page .project-statement p:not(.eyebrow) {
+    max-width: 700px;
+
+    margin-bottom: 18px;
+
+    color: var(--muted);
+
+    line-height: 1.75;
+}
+
+
+
+/* ------------------------------------------------------------
+   TECHNICAL SPECIFICATION
+------------------------------------------------------------ */
+
+.projects-page .project-specification {
+    border-top:
+        1px solid
+        rgba(
+            200,
+            255,
+            47,
+            0.22
+        );
+}
+
+
+.projects-page .project-spec {
+    min-height: 51px;
+
+    padding:
+        15px
+        0;
+
+    grid-template-columns:
+        125px
+        minmax(0, 1fr);
+
+    align-items: center;
+}
+
+
+.projects-page .project-spec span {
+    font-size: 0.65rem;
+
+    letter-spacing: 0.11em;
+}
+
+
+.projects-page .project-spec strong {
+    font-size: 0.68rem;
+
+    letter-spacing: 0.08em;
+}
+
+
+
+/* ------------------------------------------------------------
+   TAGS
+------------------------------------------------------------ */
+
+.projects-page .project-tags {
+    margin-top: 62px;
+
+    padding-top: 24px;
+
+    border-top:
+        1px solid
+        rgba(
+            237,
+            243,
+            239,
+            0.08
+        );
+}
+
+
+.projects-page .project-tags span {
+    min-height: 34px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    padding:
+        8px
+        12px;
+}
+
+
+
+/* ------------------------------------------------------------
+   PROJECT FOOTER
+------------------------------------------------------------ */
+
+.projects-page .project-entry-footer {
+    margin-top: 52px;
+
+    padding-top: 17px;
+
+    border-top:
+        1px solid
+        rgba(
+            237,
+            243,
+            239,
+            0.12
+        );
+}
+
+
+
+/* ------------------------------------------------------------
+   BETWEEN-PROJECT MARKER
+------------------------------------------------------------ */
+
+.projects-page .project-entry + .project-entry::after {
+    content:
+        "NEXT OPERATION";
+
+    position: absolute;
+
+    top: -10px;
+    left: 0;
+
+    padding:
+        0
+        10px
+        0
+        0;
+
+    background: var(--black);
+
+    color: var(--acid);
+
+    font-size: 0.56rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.15em;
+}
+
+
+
+/* ------------------------------------------------------------
+   ARCHIVE END
+------------------------------------------------------------ */
+
+.projects-page .archive-end {
+    min-height: 500px;
+
+    padding-top: 110px;
+
+    padding-bottom: 110px;
+
+    border-top:
+        1px solid
+        rgba(
+            200,
+            255,
+            47,
+            0.28
+        );
+}
+
+
+
+/* ------------------------------------------------------------
+   TABLET
+------------------------------------------------------------ */
+
+@media (max-width: 900px) {
+
+    .projects-page .project-information {
+        grid-template-columns: 1fr;
+
+        gap: 55px;
+    }
+
+
+    .projects-page .project-gallery-slide {
+        flex-basis:
+            calc(
+                (100% - 12px) / 2
+            );
+    }
+
+}
+
+
+
+/* ------------------------------------------------------------
+   MOBILE
+------------------------------------------------------------ */
+
+@media (max-width: 640px) {
+
+    .projects-page .project-stack {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+
+    .projects-page .project-entry {
+        padding:
+            85px
+            0
+            100px;
+    }
+
+
+    .projects-page .project-entry::before {
+        top: 45px;
+
+        font-size: 5rem;
+    }
+
+
+    .projects-page .project-entry-header {
+        min-height: 0;
+
+        margin-bottom: 38px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 22px;
+    }
+
+
+    .projects-page .project-index {
+        width: 100%;
+
+        min-width: 0;
+
+        text-align: left;
+    }
+
+
+    .projects-page .project-gallery {
+        margin-bottom: 50px;
+    }
+
+
+    .projects-page .project-information {
+        gap: 45px;
+    }
+
+
+    .projects-page .project-tags {
+        margin-top: 45px;
+    }
+
+
+    .projects-page .project-entry-footer {
+        margin-top: 42px;
+    }
+
+}
+
+
+@media (max-width: 560px) {
+
+    .projects-page .project-gallery-slide {
+        flex-basis: 100%;
+    }
+
+}
+
