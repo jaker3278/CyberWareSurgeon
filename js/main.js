@@ -1,19 +1,36 @@
 ﻿"use strict";
 
+/* ============================================================
+   CYBERWARESURGEON
+   SITE JAVASCRIPT
+   ============================================================ */
+
+
+/* ------------------------------------------------------------
+   COPYRIGHT YEAR
+------------------------------------------------------------ */
+
 const yearElement =
     document.getElementById("year");
 
 if (yearElement) {
+
     yearElement.textContent =
         new Date().getFullYear();
+
 }
 
 
-/* ============================================================
-   CYBERWARESURGEON PROJECT GALLERY V0.6
-   Manual navigation only. No autoplay.
-   ============================================================ */
+/* ------------------------------------------------------------
+   PROJECT GALLERIES
 
+   Desktop : 4 visible
+   Tablet  : 2 visible
+   Mobile  : 1 visible
+
+   Manual navigation only.
+   NO autoplay.
+------------------------------------------------------------ */
 
 document
     .querySelectorAll("[data-project-gallery]")
@@ -58,37 +75,91 @@ document
             !previousButton ||
             !nextButton
         ) {
+
             return;
+
         }
 
 
         let currentIndex = 0;
 
 
-        /*
-            If a future image file does not exist,
-            hide the broken <img> and reveal the
-            deliberately designed placeholder below it.
-        */
+        /* ----------------------------------------------------
+           IMAGE / PLACEHOLDER STATE
+        ---------------------------------------------------- */
 
         slides.forEach((slide) => {
 
             const image =
                 slide.querySelector("img");
 
+            const placeholder =
+                slide.querySelector(
+                    ".gallery-image-placeholder"
+                );
+
+
             if (!image) {
                 return;
             }
 
+
+            const showImage = () => {
+
+                image.style.display = "block";
+
+                if (placeholder) {
+                    placeholder.style.display = "none";
+                }
+
+            };
+
+
+            const showPlaceholder = () => {
+
+                image.style.display = "none";
+
+                if (placeholder) {
+                    placeholder.style.display = "flex";
+                }
+
+            };
+
+
+            image.addEventListener(
+                "load",
+                showImage
+            );
+
+
             image.addEventListener(
                 "error",
-                () => {
-                    image.style.display = "none";
-                }
+                showPlaceholder
             );
+
+
+            /*
+                The browser may have completed the request
+                before these listeners were attached.
+            */
+
+            if (image.complete) {
+
+                if (image.naturalWidth > 0) {
+                    showImage();
+                }
+                else {
+                    showPlaceholder();
+                }
+
+            }
 
         });
 
+
+        /* ----------------------------------------------------
+           RESPONSIVE VISIBLE COUNT
+        ---------------------------------------------------- */
 
         const getVisibleCount = () => {
 
@@ -97,21 +168,31 @@ document
                     "(max-width: 560px)"
                 ).matches
             ) {
+
                 return 1;
+
             }
+
 
             if (
                 window.matchMedia(
                     "(max-width: 900px)"
                 ).matches
             ) {
+
                 return 2;
+
             }
+
 
             return 4;
 
         };
 
+
+        /* ----------------------------------------------------
+           UPDATE POSITION
+        ---------------------------------------------------- */
 
         const updateGallery = () => {
 
@@ -182,17 +263,22 @@ document
         };
 
 
+        /* ----------------------------------------------------
+           MANUAL CONTROLS
+        ---------------------------------------------------- */
+
         previousButton.addEventListener(
             "click",
             () => {
 
-                if (currentIndex > 0) {
-
-                    currentIndex -= 1;
-
-                    updateGallery();
-
+                if (currentIndex <= 0) {
+                    return;
                 }
+
+
+                currentIndex -= 1;
+
+                updateGallery();
 
             }
         );
@@ -210,28 +296,25 @@ document
                     );
 
 
-                if (
-                    currentIndex <
-                    maximumIndex
-                ) {
-
-                    currentIndex += 1;
-
-                    updateGallery();
-
+                if (currentIndex >= maximumIndex) {
+                    return;
                 }
+
+
+                currentIndex += 1;
+
+                updateGallery();
 
             }
         );
 
 
-        /*
-            Resize does not advance anything.
-            It simply recalculates how many images
-            fit on the screen.
-        */
+        /* ----------------------------------------------------
+           RESPONSIVE RECALCULATION
+        ---------------------------------------------------- */
 
         let resizeTimer = null;
+
 
         window.addEventListener(
             "resize",
@@ -240,6 +323,7 @@ document
                 clearTimeout(
                     resizeTimer
                 );
+
 
                 resizeTimer =
                     setTimeout(
@@ -254,4 +338,3 @@ document
         updateGallery();
 
     });
-
