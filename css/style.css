@@ -808,3 +808,512 @@ footer {
     }
 
 }
+
+
+/* ============================================================
+   CYBERWARESURGEON PROJECT ARCHIVE V0.1
+   ============================================================ */
+
+
+.nav-active {
+    color: var(--acid) !important;
+}
+
+
+.projects-intro {
+    max-width: var(--max-width);
+
+    margin: 0 auto;
+
+    padding:
+        clamp(90px, 11vw, 180px)
+        32px
+        120px;
+
+    position: relative;
+}
+
+
+.projects-intro-code {
+    position: absolute;
+
+    top: 45px;
+    right: 32px;
+
+    color: var(--muted);
+
+    font-size: 0.65rem;
+
+    letter-spacing: 0.14em;
+}
+
+
+.projects-title {
+    max-width: 1200px;
+
+    margin-bottom: 35px;
+}
+
+
+.projects-lead {
+    max-width: 760px;
+
+    color: var(--muted);
+
+    font-size: clamp(
+        1rem,
+        1.4vw,
+        1.25rem
+    );
+
+    line-height: 1.75;
+}
+
+
+.archive-status {
+    max-width: 760px;
+
+    margin-top: 60px;
+
+    padding:
+        18px
+        0;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    border-top:
+        1px solid var(--line);
+
+    border-bottom:
+        1px solid var(--line);
+
+    font-size: 0.7rem;
+
+    letter-spacing: 0.12em;
+}
+
+
+.archive-status span {
+    color: var(--muted);
+}
+
+
+.archive-status strong {
+    color: var(--acid);
+}
+
+
+
+/* ============================================================
+   PROJECT STACK
+   ============================================================ */
+
+
+.project-stack {
+    max-width: var(--max-width);
+
+    margin: 0 auto;
+
+    padding:
+        0
+        32px;
+}
+
+
+.project-entry {
+    padding:
+        110px
+        0
+        130px;
+
+    border-top:
+        1px solid var(--line);
+}
+
+
+.project-entry-header {
+    margin-bottom: 55px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: end;
+
+    gap: 50px;
+}
+
+
+.project-entry-header h2 {
+    margin: 0;
+}
+
+
+.project-entry-header h2 span {
+    display: block;
+
+    color: var(--acid);
+}
+
+
+.project-index {
+    min-width: 200px;
+
+    padding-bottom: 12px;
+
+    text-align: right;
+
+    font-size: 0.68rem;
+
+    letter-spacing: 0.12em;
+}
+
+
+.project-index span,
+.project-index strong {
+    display: block;
+}
+
+
+.project-index span {
+    margin-bottom: 8px;
+
+    color: var(--muted);
+}
+
+
+.project-index strong {
+    color: var(--acid);
+}
+
+
+
+/* ============================================================
+   PROJECT HERO
+   ============================================================ */
+
+
+.project-hero-image {
+    margin:
+        0
+        0
+        70px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border:
+        1px solid rgba(
+            200,
+            255,
+            47,
+            0.18
+        );
+
+    background: #000;
+}
+
+
+.project-hero-image::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 18px;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    border:
+        1px solid rgba(
+            255,
+            255,
+            255,
+            0.07
+        );
+}
+
+
+.project-hero-image img {
+    width: 100%;
+
+    height: auto;
+
+    display: block;
+}
+
+
+
+/* ============================================================
+   PROJECT INFORMATION
+   ============================================================ */
+
+
+.project-information {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.15fr)
+        minmax(320px, 0.85fr);
+
+    gap:
+        clamp(
+            60px,
+            10vw,
+            160px
+        );
+}
+
+
+.project-statement h3 {
+    max-width: 750px;
+
+    margin-bottom: 30px;
+
+    font-size:
+        clamp(
+            2rem,
+            4vw,
+            4.8rem
+        );
+
+    line-height: 0.95;
+
+    letter-spacing: -0.045em;
+}
+
+
+.project-statement p:not(.eyebrow) {
+    max-width: 720px;
+
+    color: var(--muted);
+
+    line-height: 1.75;
+}
+
+
+.project-specification {
+    border-top:
+        1px solid var(--line);
+}
+
+
+.project-spec {
+    padding:
+        16px
+        0;
+
+    display: grid;
+
+    grid-template-columns:
+        120px
+        1fr;
+
+    gap: 20px;
+
+    border-bottom:
+        1px solid var(--line);
+
+    font-size: 0.7rem;
+
+    letter-spacing: 0.1em;
+}
+
+
+.project-spec span {
+    color: var(--muted);
+}
+
+
+.project-spec strong {
+    color: var(--text);
+
+    text-align: right;
+}
+
+
+
+/* ============================================================
+   TAGS
+   ============================================================ */
+
+
+.project-tags {
+    margin-top: 65px;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+
+.project-tags span {
+    padding:
+        9px
+        13px;
+
+    border:
+        1px solid rgba(
+            200,
+            255,
+            47,
+            0.24
+        );
+
+    color: var(--acid);
+
+    font-size: 0.64rem;
+
+    letter-spacing: 0.1em;
+}
+
+
+.project-entry-footer {
+    margin-top: 60px;
+
+    padding-top: 18px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    border-top:
+        1px solid var(--line);
+
+    color: var(--muted);
+
+    font-size: 0.64rem;
+
+    letter-spacing: 0.12em;
+}
+
+
+
+/* ============================================================
+   ARCHIVE END
+   ============================================================ */
+
+
+.archive-end {
+    max-width: var(--max-width);
+
+    min-height: 600px;
+
+    margin: 0 auto;
+
+    padding:
+        120px
+        32px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    border-top:
+        1px solid var(--line);
+}
+
+
+.archive-end h2 span {
+    display: block;
+
+    color: var(--acid);
+}
+
+
+
+/* ============================================================
+   PROJECT RESPONSIVE
+   ============================================================ */
+
+
+@media (max-width: 900px) {
+
+    .project-information {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 640px) {
+
+    .projects-intro,
+    .project-stack,
+    .archive-end {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+
+    .projects-intro-code {
+        position: static;
+
+        margin-bottom: 50px;
+    }
+
+
+    .archive-status {
+        flex-direction: column;
+
+        gap: 8px;
+    }
+
+
+    .project-entry {
+        padding-top: 80px;
+        padding-bottom: 90px;
+    }
+
+
+    .project-entry-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+
+    .project-index {
+        text-align: left;
+    }
+
+
+    .project-hero-image {
+        margin-bottom: 45px;
+    }
+
+
+    .project-spec {
+        grid-template-columns: 1fr;
+
+        gap: 5px;
+    }
+
+
+    .project-spec strong {
+        text-align: left;
+    }
+
+
+    .project-entry-footer {
+        flex-direction: column;
+
+        gap: 8px;
+    }
+
+}
+
