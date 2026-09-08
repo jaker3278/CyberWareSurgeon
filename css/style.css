@@ -1512,3 +1512,834 @@ footer {
 
 }
 
+
+
+/* ============================================================
+   CYBERWARESURGEON HOME PORTAL V0.3
+   ============================================================ */
+
+
+.home-portal {
+    overflow: hidden;
+}
+
+
+/* ------------------------------------------------------------
+   HERO
+------------------------------------------------------------ */
+
+
+.portal-hero {
+    max-width: var(--max-width);
+
+    margin: 0 auto;
+
+    padding:
+        clamp(90px, 10vw, 160px)
+        32px
+        100px;
+}
+
+
+.portal-grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.2fr)
+        minmax(360px, 0.8fr);
+
+    gap:
+        clamp(
+            60px,
+            9vw,
+            150px
+        );
+
+    align-items: center;
+}
+
+
+.portal-system-line {
+    margin-bottom: 55px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+    color: var(--muted);
+
+    font-size: 0.62rem;
+
+    letter-spacing: 0.14em;
+}
+
+
+.portal-title {
+    max-width: 950px;
+
+    margin-bottom: 35px;
+
+    font-size:
+        clamp(
+            4rem,
+            8vw,
+            9rem
+        );
+
+    line-height: 0.84;
+}
+
+
+.portal-title span {
+    display: block;
+
+    color: var(--acid);
+
+    -webkit-text-stroke: 0;
+}
+
+
+.portal-intro {
+    max-width: 680px;
+
+    color: var(--muted);
+
+    font-size:
+        clamp(
+            1rem,
+            1.4vw,
+            1.2rem
+        );
+
+    line-height: 1.75;
+}
+
+
+.portal-directive {
+    margin-top: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    color: var(--muted);
+
+    font-size: 0.66rem;
+
+    letter-spacing: 0.16em;
+}
+
+
+.portal-directive p {
+    margin: 0;
+}
+
+
+.portal-directive-marker {
+    width: 8px;
+    height: 8px;
+
+    background: var(--acid);
+
+    box-shadow:
+        0 0 14px
+        rgba(200, 255, 47, 0.8);
+}
+
+
+
+/* ------------------------------------------------------------
+   PORTAL CORE
+------------------------------------------------------------ */
+
+
+.portal-core {
+    padding:
+        30px;
+
+    border:
+        1px solid
+        rgba(
+            200,
+            255,
+            47,
+            0.18
+        );
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(200,255,47,0.04),
+            transparent 55%
+        ),
+        var(--panel);
+}
+
+
+.portal-core-frame {
+    width:
+        min(
+            370px,
+            90%
+        );
+
+    aspect-ratio: 1;
+
+    margin:
+        30px
+        auto
+        55px;
+
+    position: relative;
+
+    display: grid;
+
+    place-items: center;
+}
+
+
+.portal-core-ring {
+    position: absolute;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(
+            200,
+            255,
+            47,
+            0.28
+        );
+}
+
+
+.portal-core-ring-a {
+    width: 100%;
+    height: 100%;
+
+    border-style: dashed;
+
+    animation:
+        core-spin
+        25s
+        linear
+        infinite;
+}
+
+
+.portal-core-ring-b {
+    width: 75%;
+    height: 75%;
+}
+
+
+.portal-core-ring-c {
+    width: 48%;
+    height: 48%;
+
+    border-color:
+        rgba(
+            200,
+            255,
+            47,
+            0.55
+        );
+}
+
+
+.portal-core-center {
+    width: 30%;
+    aspect-ratio: 1;
+
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    transform: rotate(45deg);
+
+    border:
+        1px solid var(--acid);
+
+    background:
+        rgba(
+            200,
+            255,
+            47,
+            0.06
+        );
+}
+
+
+.portal-core-center span,
+.portal-core-center strong {
+    transform: rotate(-45deg);
+}
+
+
+.portal-core-center span {
+    color: var(--acid);
+
+    font-weight: 800;
+}
+
+
+.portal-core-center strong {
+    margin-top: 7px;
+
+    color: var(--muted);
+
+    font-size: 0.52rem;
+
+    letter-spacing: 0.12em;
+}
+
+
+.portal-scan-line {
+    position: absolute;
+
+    width: 100%;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--acid),
+            transparent
+        );
+
+    animation:
+        portal-scan
+        4s
+        ease-in-out
+        infinite;
+}
+
+
+.portal-core-data {
+    border-top:
+        1px solid var(--line);
+}
+
+
+.portal-core-data span {
+    padding:
+        12px
+        0;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    border-bottom:
+        1px solid var(--line);
+
+    color: var(--muted);
+
+    font-size: 0.66rem;
+
+    letter-spacing: 0.1em;
+}
+
+
+.portal-core-data strong {
+    color: var(--acid);
+}
+
+
+@keyframes core-spin {
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+@keyframes portal-scan {
+
+    0%,
+    100% {
+        transform:
+            translateY(-140px);
+
+        opacity: 0;
+    }
+
+    50% {
+        transform:
+            translateY(140px);
+
+        opacity: 1;
+    }
+
+}
+
+
+
+/* ------------------------------------------------------------
+   THREE DOORS
+------------------------------------------------------------ */
+
+
+.portal-navigation {
+    max-width: var(--max-width);
+
+    margin: 0 auto;
+
+    padding:
+        0
+        32px
+        130px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    border-top:
+        1px solid var(--line);
+}
+
+
+.portal-door {
+    min-height: 430px;
+
+    padding:
+        30px;
+
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    border-right:
+        1px solid var(--line);
+
+    border-bottom:
+        1px solid var(--line);
+
+    transition:
+        background 180ms ease,
+        border-color 180ms ease;
+}
+
+
+.portal-door:first-child {
+    border-left:
+        1px solid var(--line);
+}
+
+
+.portal-door:hover {
+    background:
+        rgba(
+            200,
+            255,
+            47,
+            0.035
+        );
+
+    border-color:
+        rgba(
+            200,
+            255,
+            47,
+            0.3
+        );
+}
+
+
+.portal-door-index {
+    color: var(--muted);
+
+    font-size: 0.7rem;
+
+    letter-spacing: 0.12em;
+}
+
+
+.portal-door-content h2 {
+    margin-bottom: 22px;
+
+    font-size:
+        clamp(
+            2.3rem,
+            4vw,
+            4.8rem
+        );
+}
+
+
+.portal-door-content h2 span {
+    display: block;
+
+    color: var(--acid);
+}
+
+
+.portal-door-content p:not(.eyebrow) {
+    max-width: 360px;
+
+    color: var(--muted);
+
+    line-height: 1.65;
+}
+
+
+.portal-door-arrow {
+    align-self: flex-end;
+
+    color: var(--acid);
+
+    font-size: 2rem;
+}
+
+
+.featured-door::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 2px;
+
+    background:
+        var(--acid);
+}
+
+
+
+/* ------------------------------------------------------------
+   FEATURED OPERATION
+------------------------------------------------------------ */
+
+
+.featured-operation {
+    max-width: var(--max-width);
+
+    margin: 0 auto;
+
+    padding:
+        120px
+        32px;
+
+    border-top:
+        1px solid var(--line);
+}
+
+
+.featured-operation-heading {
+    margin-bottom: 55px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: end;
+
+    gap: 40px;
+}
+
+
+.featured-operation-heading h2 {
+    margin-bottom: 0;
+}
+
+
+.featured-operation-heading h2 span {
+    display: block;
+
+    color: var(--acid);
+}
+
+
+.featured-operation-status {
+    text-align: right;
+
+    font-size: 0.66rem;
+
+    letter-spacing: 0.12em;
+}
+
+
+.featured-operation-status span,
+.featured-operation-status strong {
+    display: block;
+}
+
+
+.featured-operation-status span {
+    margin-bottom: 8px;
+
+    color: var(--muted);
+}
+
+
+.featured-operation-status strong {
+    color: var(--acid);
+}
+
+
+.featured-operation-card {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.45fr)
+        minmax(330px, 0.55fr);
+
+    border:
+        1px solid var(--line);
+
+    background: var(--black-soft);
+}
+
+
+.featured-operation-image {
+    overflow: hidden;
+
+    background: #000;
+}
+
+
+.featured-operation-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+.featured-operation-copy {
+    padding:
+        clamp(
+            35px,
+            5vw,
+            70px
+        );
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+
+.featured-operation-copy h3 {
+    max-width: 520px;
+
+    margin-bottom: 25px;
+
+    font-size:
+        clamp(
+            2rem,
+            3.5vw,
+            4rem
+        );
+
+    line-height: 0.95;
+
+    letter-spacing: -0.04em;
+}
+
+
+.featured-operation-copy > p:not(.eyebrow) {
+    color: var(--muted);
+
+    line-height: 1.7;
+}
+
+
+.featured-operation-link {
+    margin-top: 35px;
+
+    padding-top: 18px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    border-top:
+        1px solid var(--line);
+
+    color: var(--acid);
+
+    font-size: 0.7rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.12em;
+}
+
+
+
+/* ------------------------------------------------------------
+   CLOSING
+------------------------------------------------------------ */
+
+
+.portal-closing {
+    max-width: var(--max-width);
+
+    margin: 0 auto;
+
+    padding:
+        34px
+        32px
+        50px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    border-top:
+        1px solid var(--line);
+
+    font-size: 0.66rem;
+
+    letter-spacing: 0.13em;
+}
+
+
+.portal-closing span {
+    color: var(--muted);
+}
+
+
+.portal-closing strong {
+    color: var(--acid);
+}
+
+
+
+/* ------------------------------------------------------------
+   RESPONSIVE
+------------------------------------------------------------ */
+
+
+@media (max-width: 1000px) {
+
+    .portal-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .portal-core {
+        max-width: 650px;
+    }
+
+
+    .portal-navigation {
+        grid-template-columns: 1fr;
+    }
+
+
+    .portal-door {
+        min-height: 280px;
+    }
+
+
+    .featured-operation-card {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 640px) {
+
+    .portal-hero,
+    .portal-navigation,
+    .featured-operation,
+    .portal-closing {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+
+    .portal-system-line {
+        flex-direction: column;
+    }
+
+
+    .portal-title {
+        font-size:
+            clamp(
+                3.3rem,
+                18vw,
+                5rem
+            );
+    }
+
+
+    .portal-core {
+        padding: 20px;
+    }
+
+
+    .portal-door {
+        padding:
+            28px
+            20px;
+    }
+
+
+    .featured-operation-heading {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    .featured-operation-status {
+        text-align: left;
+    }
+
+
+    .featured-operation-copy {
+        padding:
+            35px
+            20px;
+    }
+
+
+    .portal-closing {
+        flex-direction: column;
+    }
+
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    .portal-core-ring-a,
+    .portal-scan-line {
+        animation: none;
+    }
+
+}
+
