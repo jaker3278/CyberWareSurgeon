@@ -3492,3 +3492,16 @@ footer {
 
 }
 
+
+/* ============================================================
+   CYBERWARESURGEON HOME STATEMENT
+   ============================================================ */
+
+.home-portal-v2 .home-main-title .home-title-line {
+    display: block;
+}
+
+.home-portal-v2 .home-main-title .home-title-white {
+    color: var(--text);
+}
+
