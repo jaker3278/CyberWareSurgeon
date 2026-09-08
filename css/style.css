@@ -3991,3 +3991,37 @@ footer {
 
 }
 
+
+
+/* ============================================================
+   PROJECT EXTERNAL LINK
+   ============================================================ */
+
+.project-external-link {
+
+    margin-top: 28px;
+
+    display: inline-block;
+
+    padding-bottom: 6px;
+
+    border-bottom:
+        1px solid
+        rgba(200,255,47,0.35);
+
+    color: var(--acid);
+
+    font-size: 0.66rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.12em;
+
+}
+
+.project-external-link:hover {
+
+    border-color: var(--acid);
+
+}
+
