@@ -4985,3 +4985,145 @@ footer {
 }
 
 
+
+
+/* ============================================================
+   CYBERWARESURGEON PROJECT COST SYSTEM V1
+   ============================================================ */
+
+
+/* ------------------------------------------------------------
+   COST CATEGORY DIVIDER
+------------------------------------------------------------ */
+
+.projects-page .project-cost-heading {
+    margin-top: 22px;
+
+    padding:
+        17px
+        0
+        12px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+    border-top:
+        1px solid
+        rgba(
+            200,
+            255,
+            47,
+            0.42
+        );
+}
+
+
+.projects-page .project-cost-heading span {
+    color: var(--acid);
+
+    font-size: 0.62rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.14em;
+}
+
+
+.projects-page .project-cost-heading strong {
+    color:
+        rgba(
+            237,
+            243,
+            239,
+            0.42
+        );
+
+    font-size: 0.53rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.12em;
+}
+
+
+
+/* ------------------------------------------------------------
+   COST ROWS
+------------------------------------------------------------ */
+
+.projects-page .project-cost-row {
+    position: relative;
+}
+
+
+.projects-page .project-cost-row span {
+    color:
+        rgba(
+            237,
+            243,
+            239,
+            0.56
+        );
+}
+
+
+.projects-page .project-cost-row strong {
+    color: var(--acid);
+
+    font-size: 0.74rem;
+
+    font-weight: 900;
+
+    letter-spacing: 0.08em;
+}
+
+
+/*
+    Digital Design + Development is deliberately allowed
+    slightly more width because the label is longer.
+*/
+
+.projects-page .project-cost-row {
+    grid-template-columns:
+        minmax(
+            125px,
+            1.25fr
+        )
+        minmax(
+            75px,
+            0.75fr
+        );
+}
+
+
+.projects-page .project-cost-row strong {
+    text-align: right;
+}
+
+
+/* ------------------------------------------------------------
+   MOBILE
+------------------------------------------------------------ */
+
+@media (max-width: 560px) {
+
+    .projects-page .project-cost-heading {
+        margin-top: 18px;
+    }
+
+
+    .projects-page .project-cost-row {
+        grid-template-columns:
+            minmax(0, 1fr)
+            auto;
+
+        gap: 18px;
+    }
+
+}
+
